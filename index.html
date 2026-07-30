@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nkgd012-tech Web</title>
+    <!-- Nhúng Font chữ phong cách Gaming/Retro -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            /* Hệ màu sắc chuẩn EmulationStation (Carbon Theme) */
+            --es-dark: #121212;
+            --es-stripe: #dc2626; /* Dải viền đỏ đặc trưng */
+            --es-text-white: #eeeeee;
+            --es-text-muted: #777777;
+            --es-selection: #3b82f6; /* Màu xanh khi chọn nút */
+            --border-retro: 2px solid #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Changa', sans-serif;
+            /* Hiệu ứng nền Carbon nhám xiên góc của EmulationStation bằng CSS */
+            background: 
+                linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+                linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0,
+                linear-gradient(27deg, #222 5px, transparent 5px) 0 10px,
+                linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+                linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+                linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background-size: 20px 20px;
+            background-color: var(--es-dark);
+            color: var(--es-text-white);
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* ----------------------------------
+           GÓC TRÊN BÊN TRÁI: WELCOME TEXT
+        ------------------------------------- */
+        .top-left-welcome {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--es-text-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 3px solid var(--es-stripe);
+            padding-left: 10px;
+        }
+
+        /* ----------------------------------
+           GÓC TRÊN BÊN PHẢI: FOLLOW BUTTON
+        ------------------------------------- */
+        .top-right-profile {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+
+        .follow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #222;
+            color: #fff;
+            border: 2px solid #333;
+            padding: 8px 16px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .follow-btn:hover {
+            background: var(--es-stripe);
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* ----------------------------------
+           CHÍNH GIỮA MÀN HÌNH: MAIN PROFILE & BUTTONS
+        ------------------------------------- */
+        .main-center-panel {
+            text-align: center;
+            background: rgba(15, 15, 15, 0.9);
+            border: var(--border-retro);
+            border-top: 4px solid var(--es-stripe);
+            padding: 40px 50px;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            max-width: 500px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Khung ảnh Avatar vuông cổ điển */
+        .avatar-frame {
+            width: 160px;
+            height: 160px;
+            border: var(--border-retro);
+            background: #000;
+            margin: 0 auto 20px auto;
+            padding: 8px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(105%);
+        }
+
+        .profile-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000;
+            margin-bottom: 25px;
+        }
+
+        /* Khu vực chứa 2 nút phát hành */
+        .release-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .release-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #222222;
+            border: 2px solid #333;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.15s ease-in-out;
+        }
+
+        /* Hiệu ứng hoán đổi màu xanh khi rê chuột giống như đang chọn trò chơi */
+        .release-btn:hover {
+            background: var(--es-selection);
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        }
+
+        /* ----------------------------------
+           GÓC DƯỚI BÊN TRÁI: FOOTER TEXT
+        ------------------------------------- */
+        .bottom-left-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--es-text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* ----------------------------------
+           RESPONSIVE (ĐIỆN THOẠI)
+        ------------------------------------- */
+        @media (max-width: 600px) {
+            body {
+                justify-content: flex-start;
+                padding-top: 100px;
+                padding-bottom: 80px;
+                overflow-y: auto;
+            }
+            .top-left-welcome {
+                top: 15px;
+                left: 15px;
+                font-size: 0.9rem;
+            }
+            .top-right-profile {
+                top: 12px;
+                right: 15px;
+            }
+            .follow-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            .main-center-panel {
+                padding: 30px 20px;
+            }
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            .bottom-left-footer {
+                bottom: 15px;
+                left: 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GÓC TRÊN BÊN TRÁI -->
+    <div class="top-left-welcome">
+        welcome to nkgd012-tech web
+    </div>
+
+    <!-- GÓC TRÊN BÊN PHẢI -->
+    <div class="top-right-profile">
+        <a href="https://github.com" target="_blank" class="follow-btn">
+            <i class="fab fa-github"></i> follow my account
+        </a>
+    </div>
+
+    <!-- CHÍNH GIỮA MÀN HÌNH -->
+    <div class="main-center-panel">
+        <!-- Khung nạp ảnh đại diện tự động từ GitHub -->
+        <div class="avatar-frame">
+            <img class="avatar-img" id="user-avatar" src="https://github.com" alt="Avatar">
+        </div>
+        
+        <!-- Tên hiển thị theo yêu cầu -->
+        <div class="profile-name">NKGD2k12_VN</div>
+        
+        <!-- 2 Nút bấm dẫn tới bản phát hành -->
+        <div class="release-buttons-group">
+            <!-- Nút 1: Dẫn tới Furina Theme Collection -->
+            <a href="https://github.com/furina-theme-collection/releases" target="_blank" class="release-btn">
+                <i class="fas fa-palette"></i> furina theme collection
+            </a>
+            <!-- Nút 2: Dẫn tới GDA Save File -->
+            <a href="https://github.com/GDA-save-file/releases" target="_blank" class="release-btn">
+                <i class="fas fa-save"></i> GDA save file
+            </a>
+        </div>
+    </div>
+
+    <!-- GÓC DƯỚI BÊN TRÁI -->
+    <div class="bottom-left-footer">
+        nkgd012-tech(nkgd2k12_vn) &nbsp;&bull;&nbsp; (C)2026
+    </div>
+
+    <script>
+        // Tự động lấy ảnh đại diện chính xác nhất từ GitHub API để chèn vào giữa màn hình
+        async function loadGithubAvatar() {
+            try {
+                const response = await fetch('https://github.com');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.avatar_url) {
+                        document.getElementById('user-avatar').src = data.avatar_url;
+                    }
+                }
+            } catch (error) {
+                console.log("Không thể tải ảnh profile từ API, đang dùng ảnh dự phòng.");
+            }
+        }
+        loadGithubAvatar();
+    </script>
+</body>
+</html>
