@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nkgd012-tech Web</title>
-    <!-- Nhúng Font chữ phong cách Gaming/Retro -->
+    <!-- Thư viện phông chữ Retro và Icon hệ thống -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            /* Hệ màu sắc chuẩn EmulationStation (Carbon Theme) */
-            --es-dark: #121212;
-            --es-stripe: #dc2626; /* Dải viền đỏ đặc trưng */
+            /* Đồng bộ hệ màu sắc Neon theo tông xanh nước biển của Furina */
+            --es-dark: #0a0e17;
+            --es-stripe: #3a82f6; /* Đổi dải viền sang màu xanh dương sáng */
             --es-text-white: #eeeeee;
-            --es-text-muted: #777777;
-            --es-selection: #3b82f6; /* Màu xanh khi chọn nút */
-            --border-retro: 2px solid #333333;
+            --es-text-muted: #94a3b8;
+            --es-selection: #00f2ff; /* Màu xanh cyan rực rỡ khi di chuột */
+            --border-retro: 2px solid #1e293b;
         }
 
         * {
@@ -27,15 +27,12 @@
 
         body {
             font-family: 'Changa', sans-serif;
-            /* Hiệu ứng nền Carbon nhám xiên góc của EmulationStation bằng CSS */
-            background: 
-                linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-                linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0,
-                linear-gradient(27deg, #222 5px, transparent 5px) 0 10px,
-                linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-                linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-                linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-            background-size: 20px 20px;
+            /* Ảnh nền lưới neon màu tím của bạn */
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-color: var(--es-dark);
             color: var(--es-text-white);
             min-height: 100vh;
@@ -46,6 +43,18 @@
             align-items: center;
             padding: 20px;
             overflow: hidden;
+        }
+
+        /* Lớp phủ màu sẫm giúp nổi bật phần nội dung trung tâm */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 23, 0.4);
+            z-index: 1;
         }
 
         /* ----------------------------------
@@ -62,6 +71,8 @@
             letter-spacing: 2px;
             border-left: 3px solid var(--es-stripe);
             padding-left: 10px;
+            z-index: 10;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         /* ----------------------------------
@@ -71,15 +82,16 @@
             position: absolute;
             top: 20px;
             right: 25px;
+            z-index: 10;
         }
 
         .follow-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #222;
+            background: rgba(15, 23, 42, 0.8);
             color: #fff;
-            border: 2px solid #333;
+            border: 2px solid #334155;
             padding: 8px 16px;
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
@@ -87,12 +99,13 @@
             text-decoration: none;
             border-radius: 2px;
             transition: all 0.15s ease-in-out;
+            backdrop-filter: blur(5px);
         }
 
         .follow-btn:hover {
             background: var(--es-stripe);
             border-color: #fff;
-            box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+            box-shadow: 0 0 15px rgba(58, 130, 246, 0.7);
             transform: scale(1.05);
         }
 
@@ -101,27 +114,28 @@
         ------------------------------------- */
         .main-center-panel {
             text-align: center;
-            background: rgba(15, 15, 15, 0.9);
+            background: rgba(15, 23, 42, 0.85);
             border: var(--border-retro);
             border-top: 4px solid var(--es-stripe);
             padding: 40px 50px;
             border-radius: 4px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            max-width: 550px;
             width: 100%;
             z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
-        /* Khung chứa ảnh đại diện hình tròn hoàn chỉnh */
+        /* Khung chứa ảnh đại diện Furina hình tròn */
         .avatar-circle-frame {
             width: 150px;
             height: 150px;
-            border: 3px solid var(--es-stripe); /* Viền đỏ phong cách Retro */
+            border: 3px solid var(--es-stripe);
             background: #000;
             margin: 0 auto 20px auto;
-            border-radius: 50%; /* Bo tròn tạo hình tròn */
-            overflow: hidden; /* Cắt gọn ảnh thừa bên ngoài */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(58, 130, 246, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,8 +144,8 @@
         .avatar-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Tự động cắt gọn đều tâm, không lo méo hình */
-            filter: contrast(105%);
+            object-fit: cover; /* Cắt ảnh tỉ lệ 1:1 ôm trọn khuôn mặt nhân vật */
+            filter: contrast(102%) brightness(102%);
         }
 
         .profile-name {
@@ -139,11 +153,11 @@
             font-weight: 800;
             letter-spacing: 2px;
             color: #ffffff;
-            text-shadow: 2px 2px 0px #000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
             margin-bottom: 25px;
         }
 
-        /* Khu vực chứa 2 nút phát hành */
+        /* Khu vực chứa các nút bấm */
         .release-buttons-group {
             display: flex;
             flex-direction: column;
@@ -155,11 +169,11 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background: #222222;
-            border: 2px solid #333;
+            background: rgba(30, 41, 59, 0.9);
+            border: 2px solid #334155;
             color: #fff;
             padding: 12px 20px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             text-decoration: none;
@@ -167,12 +181,12 @@
             transition: all 0.15s ease-in-out;
         }
 
-        /* Hiệu ứng hoán đổi màu xanh khi rê chuột giống như đang chọn trò chơi */
         .release-btn:hover {
             background: var(--es-selection);
             border-color: #ffffff;
+            color: #000000; /* Đổi màu chữ sang tối để nổi bật trên nền xanh Cyan sáng */
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
         }
 
         /* ----------------------------------
@@ -186,11 +200,10 @@
             font-size: 0.9rem;
             color: var(--es-text-muted);
             letter-spacing: 1px;
+            z-index: 10;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
 
-        /* ----------------------------------
-           RESPONSIVE (ĐIỆN THOẠI)
-        ------------------------------------- */
         @media (max-width: 600px) {
             body {
                 justify-content: flex-start;
@@ -198,30 +211,12 @@
                 padding-bottom: 80px;
                 overflow-y: auto;
             }
-            .top-left-welcome {
-                top: 15px;
-                left: 15px;
-                font-size: 0.9rem;
-            }
-            .top-right-profile {
-                top: 12px;
-                right: 15px;
-            }
-            .follow-btn {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-            .main-center-panel {
-                padding: 30px 20px;
-            }
-            .profile-name {
-                font-size: 1.8rem;
-            }
-            .bottom-left-footer {
-                bottom: 15px;
-                left: 15px;
-                font-size: 0.8rem;
-            }
+            .top-left-welcome { top: 15px; left: 15px; font-size: 0.9rem; }
+            .top-right-profile { top: 12px; right: 15px; }
+            .follow-btn { padding: 6px 12px; font-size: 0.8rem; }
+            .main-center-panel { padding: 30px 20px; }
+            .profile-name { font-size: 1.8rem; }
+            .bottom-left-footer { bottom: 15px; left: 15px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -234,29 +229,27 @@
 
     <!-- GÓC TRÊN BÊN PHẢI -->
     <div class="top-right-profile">
-        <a href="https://github.com/nkgd012-tech" target="_blank" class="follow-btn">
+        <a href="https://github.com" target="_blank" class="follow-btn">
             <i class="fab fa-github"></i> follow my account
         </a>
     </div>
 
     <!-- CHÍNH GIỮA MÀN HÌNH -->
     <div class="main-center-panel">
-        <!-- Khung ảnh đại diện hình tròn - Đã ghim cứng link ảnh của bạn -->
         <div class="avatar-circle-frame">
-            <img class="avatar-img" src="https://avatars.githubusercontent.com/u/310670037?s=400&u=248cb7d9ec7d933fa9b99826b56c9fc342ce0fdd&v=4" alt="nkgd012-tech Avatar">
+            <!-- Sử dụng file ảnh avatar tĩnh được tải lên thư mục gốc của bạn -->
+            <img class="avatar-img" src="avatar.jpg" alt="NKGD2k12_VN Avatar">
         </div>
         
-        <!-- Tên hiển thị -->
         <div class="profile-name">NKGD2k12_VN</div>
         
-        <!-- Các nút bấm điều hướng áp dụng 100% đường link gốc bạn gửi -->
         <div class="release-buttons-group">
-            <!-- Nút 1: Furina Theme Collection -->
-            <a href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware." target="_blank" class="release-btn">
+            <!-- Nút 1: Furina Theme -->
+            <a href="https://github.com/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware." target="_blank" class="release-btn">
                 <i class="fas fa-palette"></i> furina theme collection
             </a>
             <!-- Nút 2: GDA Save File -->
-            <a href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300" target="_blank" class="release-btn">
+            <a href="https://github.com/Geometry-dash-advance-legit-save-file-play-on-gb300" target="_blank" class="release-btn">
                 <i class="fas fa-save"></i> GDA save file
             </a>
         </div>
