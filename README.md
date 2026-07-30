@@ -1,0 +1,1 @@
+# nkgd012-tech.github.io
