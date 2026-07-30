@@ -149,6 +149,15 @@
             filter: contrast(102%) brightness(102%);
         }
 
+        .profile-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+            margin-bottom: 25px;
+        }
+
         /* Khu vực chứa các nút bấm */
         .release-buttons-group {
             display: flex;
@@ -220,7 +229,7 @@
         welcome to nkgd012-tech web
     </div>
 
-    <!-- GÓC TRÊN BÊN PHẢI (LINK 3: FOLLOW) -->
+    <!-- GÓC TRÊN BÊN PHẢI (NÚT BẤM DẪN TỚI PROFILE) -->
     <div class="top-right-profile">
         <button onclick="window.open('https://github.com', '_blank')" class="follow-btn">
             <i class="fab fa-github"></i> follow my account
@@ -230,20 +239,20 @@
     <!-- CHÍNH GIỮA MÀN HÌNH -->
     <div class="main-center-panel">
         <div class="avatar-circle-frame">
-            <!-- Nạp ảnh đại diện chính xác từ kho lưu trữ của bạn (avatar.jpg phải nằm cùng thư mục index.html) -->
-            <img class="avatar-img" src="avatar.jpg" onerror="this.onerror=null; this.src='https://githubusercontent.com';" alt="NKGD2k12_VN Avatar">
+            <!-- Đọc ảnh đại diện trực tiếp từ máy chủ để luôn luôn hiển thị -->
+            <img class="avatar-img" src="https://githubusercontent.com" alt="NKGD2k12_VN Avatar">
         </div>
         
         <div class="profile-name">NKGD2k12_VN</div>
         
-        <div class="release-buttons-group">
-            <!-- NÚT 1: FURINA THEME (Bắt buộc có dấu chấm ở cuối) -->
-            <button onclick="window.open('https://github.com/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware.', '_blank')" class="release-btn">
+               <div class="release-buttons-group">
+            <!-- Nút 1: Furina Theme - Giữ nguyên liên kết dài chứa dấu chấm cuối cùng và ép mở tab mới -->
+            <button onclick="window.open('https://github.com.', '_blank')" class="release-btn">
                 <i class="fas fa-palette"></i> furina theme collection
             </button>
             
-            <!-- NÚT 2: GDA SAVE FILE (Viết thường đúng nguyên bản chữ advance và play) -->
-            <button onclick="window.open('https://github.com/Geometry-dash-advance-legit-save-file-play-on-gb300', '_blank')" class="release-btn">
+            <!-- Nút 2: GDA Save File - Sửa chuẩn xác các chữ viết thường "advance" và "play" -->
+            <button onclick="window.open('https://github.com', '_blank')" class="release-btn">
                 <i class="fas fa-save"></i> GDA save file
             </button>
         </div>
