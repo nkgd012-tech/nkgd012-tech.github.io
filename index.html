@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>nkgd012-tech Web</title>
 
+
+    <!-- GOOGLE FONT -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
@@ -14,68 +23,115 @@
         rel="stylesheet"
     >
 
+
+    <!-- FONT AWESOME -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
 
+
     <style>
 
         :root {
+
             --blue: #3a82f6;
+
             --cyan: #00eaff;
+
             --white: #ffffff;
+
             --muted: #aab6ca;
+
             --panel: rgba(12, 20, 35, 0.88);
+
         }
+
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
 
         html {
+
             scroll-behavior: smooth;
+
         }
+
 
         body {
+
             min-height: 100vh;
+
             overflow-x: hidden;
 
-            font-family: "Changa", sans-serif;
             color: var(--white);
 
+            font-family: "Changa", sans-serif;
+
             background:
+
                 linear-gradient(
+
                     rgba(5, 9, 18, 0.65),
-                    rgba(5, 9, 18, 0.78)
+
+                    rgba(5, 9, 18, 0.80)
+
                 ),
+
                 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+
                 center center / cover fixed;
+
         }
 
+
+        /* =========================
+           BACKGROUND EFFECT
+        ========================= */
+
         body::before {
+
             content: "";
 
             position: fixed;
+
             inset: 0;
+
+            z-index: 0;
 
             pointer-events: none;
 
             background:
+
                 radial-gradient(
+
                     circle at 20% 20%,
+
                     rgba(0, 234, 255, 0.12),
+
                     transparent 30%
+
                 ),
+
                 radial-gradient(
+
                     circle at 80% 80%,
+
                     rgba(139, 92, 246, 0.12),
+
                     transparent 30%
+
                 );
 
-            z-index: 0;
         }
 
 
@@ -84,9 +140,11 @@
         ========================= */
 
         .top-left {
+
             position: fixed;
 
             top: 22px;
+
             left: 22px;
 
             z-index: 10;
@@ -96,10 +154,13 @@
             border-left: 3px solid var(--blue);
 
             font-family: "Share Tech Mono", monospace;
+
             font-size: 1rem;
+
             letter-spacing: 2px;
 
             text-shadow: 0 2px 8px #000000;
+
         }
 
 
@@ -108,29 +169,33 @@
         ========================= */
 
         .top-right {
+
             position: fixed;
 
             top: 18px;
+
             right: 22px;
 
             z-index: 10;
+
         }
 
 
         /* =========================
-           BUTTON COMMON
+           GITHUB BUTTON
         ========================= */
 
-        .follow-btn,
-        .release-btn,
-        .download-btn {
+        .follow-btn {
 
             display: inline-flex;
 
             align-items: center;
+
             justify-content: center;
 
             gap: 10px;
+
+            padding: 10px 18px;
 
             color: var(--white);
 
@@ -140,22 +205,16 @@
 
             border-radius: 8px;
 
+            font-family: "Share Tech Mono", monospace;
+
             text-decoration: none;
 
             transition: 0.25s ease;
+
         }
 
 
-        .follow-btn {
-            padding: 10px 18px;
-
-            font-family: "Share Tech Mono", monospace;
-        }
-
-
-        .follow-btn:hover,
-        .release-btn:hover,
-        .download-btn:hover {
+        .follow-btn:hover {
 
             color: #000000;
 
@@ -166,8 +225,11 @@
             transform: translateY(-3px);
 
             box-shadow:
+
                 0 0 12px var(--cyan),
+
                 0 0 30px rgba(0, 234, 255, 0.45);
+
         }
 
 
@@ -176,30 +238,27 @@
         ========================= */
 
         main {
+
             position: relative;
 
             z-index: 2;
-
-            width: 100%;
-        }
-
-
-        /* =========================
-           HOME
-        ========================= */
-
-        .hero {
 
             min-height: 100vh;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             padding: 100px 25px 60px;
+
         }
 
+
+        /* =========================
+           MAIN PANEL
+        ========================= */
 
         .main-panel {
 
@@ -222,7 +281,9 @@
             backdrop-filter: blur(12px);
 
             box-shadow:
+
                 0 20px 60px rgba(0, 0, 0, 0.65);
+
         }
 
 
@@ -233,6 +294,7 @@
         .avatar-frame {
 
             width: 170px;
+
             height: 170px;
 
             margin: 0 auto 24px;
@@ -246,27 +308,35 @@
             background: #000000;
 
             box-shadow:
+
                 0 0 15px var(--blue),
+
                 0 0 35px rgba(58, 130, 246, 0.55);
+
         }
 
 
         .avatar-frame img {
 
             width: 100%;
+
             height: 100%;
 
             display: block;
 
             object-fit: cover;
 
+            object-position: center;
+
             transition: 0.35s ease;
+
         }
 
 
         .avatar-frame:hover img {
 
             transform: scale(1.08);
+
         }
 
 
@@ -285,13 +355,16 @@
             letter-spacing: 2px;
 
             text-shadow:
+
                 0 0 8px var(--cyan),
+
                 0 0 25px rgba(0, 234, 255, 0.75);
+
         }
 
 
         /* =========================
-           MAIN BUTTONS
+           BUTTON GROUP
         ========================= */
 
         .button-group {
@@ -301,164 +374,63 @@
             flex-direction: column;
 
             gap: 16px;
+
         }
 
 
+        /* =========================
+           RELEASE BUTTON
+        ========================= */
+
         .release-btn {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
 
             width: 100%;
 
             padding: 14px 20px;
 
+            color: var(--white);
+
+            background: rgba(20, 31, 52, 0.9);
+
+            border: 2px solid #405273;
+
+            border-radius: 8px;
+
             font-size: 1rem;
 
             font-weight: 700;
-        }
-
-
-        /* =========================
-           DOWNLOAD SECTIONS
-        ========================= */
-
-        .download-section {
-
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 80px 25px;
-
-            scroll-margin-top: 20px;
-        }
-
-
-        .download-card {
-
-            width: 100%;
-
-            max-width: 900px;
-
-            padding: 35px;
-
-            text-align: center;
-
-            background: var(--panel);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            border-top: 4px solid var(--blue);
-
-            border-radius: 15px;
-
-            backdrop-filter: blur(12px);
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.65);
-        }
-
-
-        .download-card h2 {
-
-            margin-bottom: 8px;
-
-            font-size: 2rem;
-
-            text-shadow:
-                0 0 10px var(--cyan),
-                0 0 25px rgba(0, 234, 255, 0.7);
-        }
-
-
-        .download-card > p {
-
-            margin-bottom: 25px;
-
-            color: var(--muted);
-        }
-
-
-        /* =========================
-           PREVIEW IMAGES
-        ========================= */
-
-        .preview-image {
-
-            display: block;
-
-            width: 100%;
-
-            max-width: 640px;
-
-            max-height: 70vh;
-
-            margin: 20px auto;
-
-            object-fit: contain;
-
-            border: 2px solid var(--blue);
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 0 15px rgba(58, 130, 246, 0.65),
-                0 0 40px rgba(0, 234, 255, 0.18);
-        }
-
-
-        /* =========================
-           DOWNLOAD BUTTON AREA
-        ========================= */
-
-        .download-content {
-
-            margin-top: 35px;
-
-            padding-top: 28px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-
-        .download-content p {
-
-            margin-bottom: 20px;
-
-            color: var(--muted);
-        }
-
-
-        .download-btn {
-
-            padding: 14px 24px;
-
-            font-weight: 700;
-        }
-
-
-        /* =========================
-           BACK BUTTON
-        ========================= */
-
-        .back-btn {
-
-            display: inline-flex;
-
-            margin-top: 18px;
-
-            color: var(--muted);
 
             text-decoration: none;
 
-            transition: 0.2s ease;
+            transition: 0.25s ease;
+
         }
 
 
-        .back-btn:hover {
+        .release-btn:hover {
 
-            color: var(--cyan);
+            color: #000000;
+
+            background: var(--cyan);
+
+            border-color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 0 12px var(--cyan),
+
+                0 0 30px rgba(0, 234, 255, 0.45);
+
         }
 
 
@@ -468,19 +440,22 @@
 
         .footer {
 
-            position: relative;
+            position: fixed;
 
-            z-index: 2;
+            bottom: 20px;
 
-            padding: 20px;
+            left: 25px;
 
-            text-align: center;
+            z-index: 5;
 
             color: var(--muted);
 
             font-family: "Share Tech Mono", monospace;
 
             font-size: 0.9rem;
+
+            text-shadow: 0 2px 5px #000000;
+
         }
 
 
@@ -490,21 +465,26 @@
 
         @media (max-width: 700px) {
 
+
             .top-left {
 
                 top: 14px;
+
                 left: 14px;
 
                 font-size: 0.72rem;
 
                 letter-spacing: 1px;
+
             }
 
 
             .top-right {
 
                 top: 10px;
+
                 right: 12px;
+
             }
 
 
@@ -513,60 +493,63 @@
                 padding: 7px 10px;
 
                 font-size: 0.72rem;
+
             }
 
 
-            .hero {
+            main {
 
-                padding: 90px 15px 50px;
+                padding: 90px 15px 70px;
+
             }
 
 
             .main-panel {
 
                 padding: 30px 20px;
+
             }
 
 
             .avatar-frame {
 
                 width: 145px;
+
                 height: 145px;
+
             }
 
 
             .profile-name {
 
                 font-size: 1.8rem;
+
             }
 
 
-            .download-section {
+            .release-btn {
 
-                padding: 60px 15px;
+                font-size: 0.9rem;
+
+                padding: 13px 12px;
+
             }
 
 
-            .download-card {
+            .footer {
 
-                padding: 25px 15px;
-            }
+                left: 15px;
 
+                bottom: 12px;
 
-            .download-card h2 {
+                font-size: 0.75rem;
 
-                font-size: 1.5rem;
-            }
-
-
-            .preview-image {
-
-                max-height: 55vh;
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -586,15 +569,18 @@
 
 
     <!-- =========================
-         GITHUB PROFILE
+         GITHUB
     ========================= -->
 
     <div class="top-right">
 
         <a
             class="follow-btn"
+
             href="https://github.com/nkgd012-tech"
+
             target="_blank"
+
             rel="noopener noreferrer"
         >
 
@@ -608,260 +594,77 @@
 
 
 
+    <!-- =========================
+         MAIN
+    ========================= -->
+
     <main>
 
 
-        <!-- =========================
-             HOME
-        ========================= -->
-
-        <section
-            class="hero"
-            id="home"
-        >
-
-            <div class="main-panel">
+        <div class="main-panel">
 
 
-                <!-- AVATAR -->
+            <!-- AVATAR -->
 
-                <div class="avatar-frame">
+            <div class="avatar-frame">
 
-                    <img
-                        src="avatar.jpg"
-                        alt="NKGD2K12_VN Avatar"
-                    >
-
-                </div>
-
-
-                <!-- NAME -->
-
-                <div class="profile-name">
-
-                    NKGD2K12_VN
-
-                </div>
-
-
-                <!-- BUTTONS -->
-
-                <div class="button-group">
-
-
-                    <!-- FURINA BUTTON -->
-
-                    <a
-                        class="release-btn"
-                        href="#furina-download"
-                    >
-
-                        <i class="fas fa-palette"></i>
-
-                        FURINA THEME COLLECTION
-
-                    </a>
-
-
-
-                    <!-- GDA BUTTON -->
-
-                    <a
-                        class="release-btn"
-                        href="#gda-download"
-                    >
-
-                        <i class="fas fa-gamepad"></i>
-
-                        GEOMETRY DASH ADVANCE SAVE FILE
-
-                    </a>
-
-
-                </div>
-
+                <img
+                    src="avatar.jpg"
+                    alt="NKGD2K12_VN Avatar"
+                >
 
             </div>
 
-        </section>
+
+            <!-- NAME -->
+
+            <div class="profile-name">
+
+                NKGD2K12_VN
+
+            </div>
 
 
+            <!-- BUTTONS -->
 
-        <!-- =========================
-             FURINA SECTION
-        ========================= -->
-
-        <section
-            class="download-section"
-            id="furina-download"
-        >
-
-            <div class="download-card">
+            <div class="button-group">
 
 
-                <h2>
+                <!-- FURINA -->
+
+                <a
+                    class="release-btn"
+
+                    href="furina.html"
+                >
 
                     <i class="fas fa-palette"></i>
 
-                    Furina Theme Collection
+                    FURINA THEME COLLECTION
 
-                </h2>
-
-
-                <p>
-
-                    Preview Furina Theme Collection
-
-                </p>
+                </a>
 
 
-                <!-- FURINA IMAGE -->
 
-                <img
-                    class="preview-image"
-                    src="muxconfig.png"
-                    alt="Furina Theme Collection Preview"
+                <!-- GDA -->
+
+                <a
+                    class="release-btn"
+
+                    href="GDA.html"
                 >
-
-
-                <!-- DOWNLOAD -->
-
-                <div class="download-content">
-
-
-                    <p>
-
-                        Kéo xuống để tải Furina Theme Collection.
-
-                    </p>
-
-
-                    <a
-                        class="download-btn"
-                        href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fab fa-github"></i>
-
-                        DOWNLOAD FURINA THEME
-
-                    </a>
-
-
-                    <br>
-
-
-                    <a
-                        class="back-btn"
-                        href="#home"
-                    >
-
-                        <i class="fas fa-arrow-up"></i>
-
-                        &nbsp;
-
-                        Quay lại trang chính
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             GDA SECTION
-        ========================= -->
-
-        <section
-            class="download-section"
-            id="gda-download"
-        >
-
-            <div class="download-card">
-
-
-                <h2>
 
                     <i class="fas fa-gamepad"></i>
 
-                    Geometry Dash Advance
+                    GEOMETRY DASH ADVANCE SAVE FILE
 
-                </h2>
-
-
-                <p>
-
-                    Geometry Dash Advance Legit Save File
-
-                </p>
-
-
-                <!-- GDA IMAGE -->
-
-                <img
-                    class="preview-image"
-                    src="GDA.jpg"
-                    alt="Geometry Dash Advance Save File Preview"
-                >
-
-
-                <!-- DOWNLOAD -->
-
-                <div class="download-content">
-
-
-                    <p>
-
-                        Kéo xuống để tải Geometry Dash Advance Legit Save File.
-
-                    </p>
-
-
-                    <a
-                        class="download-btn"
-                        href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fab fa-github"></i>
-
-                        DOWNLOAD GDA SAVE FILE
-
-                    </a>
-
-
-                    <br>
-
-
-                    <a
-                        class="back-btn"
-                        href="#home"
-                    >
-
-                        <i class="fas fa-arrow-up"></i>
-
-                        &nbsp;
-
-                        Quay lại trang chính
-
-                    </a>
-
-
-                </div>
+                </a>
 
 
             </div>
 
-        </section>
+
+        </div>
 
 
     </main>
