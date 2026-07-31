@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Furina Theme Collection | NKGD012-TECH</title>
+
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         FONT AWESOME
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        /* =========================
+           ROOT
+        ========================== */
+
+        :root {
+
+            --blue: #3a82f6;
+
+            --cyan: #00eaff;
+
+            --white: #ffffff;
+
+            --muted: #aab6ca;
+
+            --dark: #050912;
+
+            --panel: rgba(12, 20, 35, 0.90);
+
+            --border: rgba(255, 255, 255, 0.12);
+
+        }
+
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            color: var(--white);
+
+            font-family: "Changa", sans-serif;
+
+            background:
+
+                linear-gradient(
+
+                    rgba(5, 9, 18, 0.68),
+
+                    rgba(5, 9, 18, 0.84)
+
+                ),
+
+                url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+
+                center center / cover fixed;
+
+        }
+
+
+        /* =========================
+           BACKGROUND EFFECT
+        ========================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+
+                    circle at 15% 20%,
+
+                    rgba(0, 234, 255, 0.13),
+
+                    transparent 30%
+
+                ),
+
+                radial-gradient(
+
+                    circle at 85% 80%,
+
+                    rgba(139, 92, 246, 0.14),
+
+                    transparent 30%
+
+                );
+
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 20px 25px;
+
+            background: rgba(5, 10, 20, 0.72);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(12px);
+
+        }
+
+
+        /* =========================
+           SITE NAME
+        ========================== */
+
+        .site-name {
+
+            padding-left: 12px;
+
+            border-left: 3px solid var(--blue);
+
+            color: var(--white);
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 1rem;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+
+                0 2px 8px rgba(0, 0, 0, 0.8);
+
+        }
+
+
+        /* =========================
+           HOME BUTTON
+        ========================== */
+
+        .home-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 10px 18px;
+
+            color: var(--white);
+
+            background: rgba(20, 31, 52, 0.92);
+
+            border: 2px solid #405273;
+
+            border-radius: 8px;
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 0.9rem;
+
+            text-decoration: none;
+
+            transition: all 0.25s ease;
+
+        }
+
+
+        .home-btn:hover {
+
+            color: #000000;
+
+            background: var(--cyan);
+
+            border-color: var(--white);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 0 12px var(--cyan),
+
+                0 0 30px rgba(0, 234, 255, 0.45);
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        main {
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: calc(100vh - 76px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 60px 20px;
+
+        }
+
+
+        /* =========================
+           FURINA CARD
+        ========================== */
+
+        .furina-card {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background: var(--panel);
+
+            border: 1px solid var(--border);
+
+            border-top: 4px solid var(--blue);
+
+            border-radius: 15px;
+
+            backdrop-filter: blur(14px);
+
+            box-shadow:
+
+                0 20px 60px rgba(0, 0, 0, 0.68);
+
+        }
+
+
+        /* =========================
+           TITLE
+        ========================== */
+
+        .title {
+
+            margin-bottom: 10px;
+
+            color: var(--white);
+
+            font-size: 2.5rem;
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+
+                0 0 8px var(--cyan),
+
+                0 0 25px rgba(0, 234, 255, 0.72);
+
+        }
+
+
+        /* =========================
+           DESCRIPTION
+        ========================== */
+
+        .description {
+
+            max-width: 700px;
+
+            margin: 0 auto 30px;
+
+            color: var(--muted);
+
+            font-size: 1rem;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           IMAGE AREA
+        ========================== */
+
+        .image-container {
+
+            width: 100%;
+
+            margin: 0 auto 35px;
+
+        }
+
+
+        /* =========================
+           FURINA IMAGE
+        ========================== */
+
+        .preview-image {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 700px;
+
+            max-height: 70vh;
+
+            margin: 0 auto;
+
+            object-fit: contain;
+
+            border: 2px solid var(--blue);
+
+            border-radius: 12px;
+
+            background: #000000;
+
+            box-shadow:
+
+                0 0 15px rgba(58, 130, 246, 0.65),
+
+                0 0 40px rgba(0, 234, 255, 0.18);
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .preview-image:hover {
+
+            transform: scale(1.01);
+
+            box-shadow:
+
+                0 0 20px rgba(58, 130, 246, 0.8),
+
+                0 0 50px rgba(0, 234, 255, 0.25);
+
+        }
+
+
+        /* =========================
+           DOWNLOAD AREA
+        ========================== */
+
+        .download-area {
+
+            padding-top: 30px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+        }
+
+
+        .download-title {
+
+            margin-bottom: 10px;
+
+            color: var(--white);
+
+            font-size: 1.6rem;
+
+            font-weight: 700;
+
+        }
+
+
+        .download-description {
+
+            max-width: 600px;
+
+            margin: 0 auto 25px;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           DOWNLOAD BUTTON
+        ========================== */
+
+        .download-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 26px;
+
+            color: var(--white);
+
+            background: rgba(20, 31, 52, 0.95);
+
+            border: 2px solid #405273;
+
+            border-radius: 8px;
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: all 0.25s ease;
+
+        }
+
+
+        .download-btn:hover {
+
+            color: #000000;
+
+            background: var(--cyan);
+
+            border-color: var(--white);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 0 12px var(--cyan),
+
+                0 0 30px rgba(0, 234, 255, 0.5);
+
+        }
+
+
+        /* =========================
+           BACK HOME
+        ========================== */
+
+        .back-home {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 22px auto 0;
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+
+        }
+
+
+        .back-home:hover {
+
+            color: var(--cyan);
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 20px;
+
+            color: var(--muted);
+
+            text-align: center;
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 0.85rem;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+
+            .top-bar {
+
+                padding: 15px;
+
+            }
+
+
+            .site-name {
+
+                font-size: 0.72rem;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .home-btn {
+
+                padding: 7px 11px;
+
+                font-size: 0.72rem;
+
+            }
+
+
+            main {
+
+                min-height: calc(100vh - 65px);
+
+                padding: 35px 15px;
+
+            }
+
+
+            .furina-card {
+
+                padding: 25px 15px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .title {
+
+                font-size: 1.75rem;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .description {
+
+                font-size: 0.9rem;
+
+            }
+
+
+            .preview-image {
+
+                max-height: 55vh;
+
+                border-radius: 9px;
+
+            }
+
+
+            .download-title {
+
+                font-size: 1.4rem;
+
+            }
+
+
+            .download-btn {
+
+                width: 100%;
+
+                padding: 13px 15px;
+
+                font-size: 0.9rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="top-bar">
+
+
+        <!-- WEBSITE NAME -->
+
+        <div class="site-name">
+
+            NKGD012-TECH WEB
+
+        </div>
+
+
+        <!-- HOME -->
+
+        <a
+            class="home-btn"
+            href="index.html"
+        >
+
+            <i class="fas fa-house"></i>
+
+            HOME
+
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+
+        <section class="furina-card">
+
+
+            <!-- =========================
+                 TITLE
+            ========================== -->
+
+            <h1 class="title">
+
+                FURINA THEME COLLECTION
+
+            </h1>
+
+
+            <!-- =========================
+                 DESCRIPTION
+            ========================== -->
+
+            <p class="description">
+
+                Theme Collection for muOS,
+                compatible with GB300 / SF2000
+                when using Unifrog firmware.
+
+            </p>
+
+
+            <!-- =========================
+                 IMAGE
+            ========================== -->
+
+            <div class="image-container">
+
+                <img
+                    class="preview-image"
+                    src="muxconfig.png"
+                    alt="Furina Theme Collection Preview"
+                >
+
+            </div>
+
+
+            <!-- =========================
+                 DOWNLOAD
+            ========================== -->
+
+            <div class="download-area">
+
+
+                <h2 class="download-title">
+
+                    DOWNLOAD
+
+                </h2>
+
+
+                <p class="download-description">
+
+                    Nhấn vào nút bên dưới để truy cập
+                    repository GitHub và tải
+                    Furina Theme Collection.
+
+                </p>
+
+
+                <!-- =========================
+                     GITHUB DOWNLOAD BUTTON
+                ========================== -->
+
+                <a
+                    class="download-btn"
+
+                    href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+                >
+
+                    <i class="fab fa-github"></i>
+
+                    DOWNLOAD FURINA THEME
+
+                </a>
+
+
+                <!-- =========================
+                     BACK HOME
+                ========================== -->
+
+                <a
+                    class="back-home"
+                    href="index.html"
+                >
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    &nbsp;
+
+                    Quay lại sảnh chính
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        nkgd012-tech (NKGD2K12_VN)
+
+        &nbsp;&bull;&nbsp;
+
+        © 2026
+
+    </footer>
+
+
+</body>
+
+</html>
