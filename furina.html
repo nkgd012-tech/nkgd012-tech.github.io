@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Furina Theme Collection | NKGD012-TECH</title>
 
+
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap"
         rel="stylesheet"
     >
 
+
     <!-- FONT AWESOME -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
+
 
     <style>
 
@@ -33,41 +50,44 @@
             --panel: rgba(12, 20, 35, 0.88);
         }
 
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             min-height: 100vh;
+
             overflow-x: hidden;
 
             color: var(--white);
 
             font-family: "Changa", sans-serif;
 
-            /*
-            ẢNH NỀN GIỐNG SẢNH CHÍNH
-            */
             background:
+
                 linear-gradient(
                     rgba(5, 9, 18, 0.65),
                     rgba(5, 9, 18, 0.80)
                 ),
+
                 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+
                 center center / cover fixed;
         }
 
-        /*
-        HIỆU ỨNG ÁNH SÁNG NỀN
-        */
 
         body::before {
+
             content: "";
 
             position: fixed;
@@ -79,11 +99,13 @@
             pointer-events: none;
 
             background:
+
                 radial-gradient(
                     circle at 20% 20%,
                     rgba(0, 234, 255, 0.12),
                     transparent 30%
                 ),
+
                 radial-gradient(
                     circle at 80% 80%,
                     rgba(139, 92, 246, 0.12),
@@ -91,9 +113,10 @@
                 );
         }
 
-        /*
-        THANH TRÊN
-        */
+
+        /* =========================
+           TOP BAR
+        ========================== */
 
         .top-bar {
 
@@ -111,10 +134,11 @@
 
             background: rgba(5, 10, 20, 0.65);
 
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
             backdrop-filter: blur(10px);
         }
+
 
         .site-name {
 
@@ -129,9 +153,10 @@
             letter-spacing: 2px;
         }
 
-        /*
-        NÚT HOME
-        */
+
+        /* =========================
+           HOME
+        ========================== */
 
         .home-btn {
 
@@ -147,7 +172,7 @@
 
             color: #ffffff;
 
-            background: rgba(20,31,52,0.9);
+            background: rgba(20, 31, 52, 0.9);
 
             border: 2px solid #405273;
 
@@ -157,6 +182,7 @@
 
             transition: 0.25s ease;
         }
+
 
         .home-btn:hover {
 
@@ -170,12 +196,13 @@
 
             box-shadow:
                 0 0 12px var(--cyan),
-                0 0 30px rgba(0,234,255,0.45);
+                0 0 30px rgba(0, 234, 255, 0.45);
         }
 
-        /*
-        NỘI DUNG
-        */
+
+        /* =========================
+           MAIN
+        ========================== */
 
         main {
 
@@ -194,11 +221,12 @@
             padding: 60px 20px;
         }
 
-        /*
-        KHUNG FURINA
-        */
 
-        .furina-card {
+        /* =========================
+           CARD
+        ========================== */
+
+        .content-card {
 
             width: 100%;
 
@@ -210,7 +238,7 @@
 
             background: var(--panel);
 
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255, 255, 255, 0.12);
 
             border-top: 4px solid var(--blue);
 
@@ -219,12 +247,13 @@
             backdrop-filter: blur(12px);
 
             box-shadow:
-                0 20px 60px rgba(0,0,0,0.65);
+                0 20px 60px rgba(0, 0, 0, 0.65);
         }
 
-        /*
-        TIÊU ĐỀ
-        */
+
+        /* =========================
+           TITLE
+        ========================== */
 
         .title {
 
@@ -238,8 +267,9 @@
 
             text-shadow:
                 0 0 8px var(--cyan),
-                0 0 25px rgba(0,234,255,0.7);
+                0 0 25px rgba(0, 234, 255, 0.7);
         }
+
 
         .description {
 
@@ -250,9 +280,10 @@
             line-height: 1.7;
         }
 
-        /*
-        ẢNH FURINA
-        */
+
+        /* =========================
+           IMAGE
+        ========================== */
 
         .preview-image {
 
@@ -275,20 +306,22 @@
             background: #000000;
 
             box-shadow:
-                0 0 15px rgba(58,130,246,0.65),
-                0 0 40px rgba(0,234,255,0.18);
+                0 0 15px rgba(58, 130, 246, 0.65),
+                0 0 40px rgba(0, 234, 255, 0.18);
         }
 
-        /*
-        KHU VỰC DOWNLOAD
-        */
+
+        /* =========================
+           DOWNLOAD
+        ========================== */
 
         .download-area {
 
             padding-top: 30px;
 
-            border-top: 1px solid rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
+
 
         .download-title {
 
@@ -297,20 +330,38 @@
             font-size: 1.6rem;
         }
 
+
         .download-description {
 
             margin-bottom: 25px;
 
             color: var(--muted);
+
+            line-height: 1.7;
         }
 
-        /*
-        NÚT DOWNLOAD
-        */
 
-        .download-btn {
+        .button-group {
 
-            display: inline-flex;
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            max-width: 500px;
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .action-btn {
+
+            display: flex;
 
             align-items: center;
 
@@ -318,24 +369,31 @@
 
             gap: 10px;
 
-            padding: 14px 26px;
+            width: 100%;
+
+            padding: 14px 20px;
 
             color: #ffffff;
 
-            background: rgba(20,31,52,0.95);
+            background: rgba(20, 31, 52, 0.95);
 
             border: 2px solid #405273;
 
             border-radius: 8px;
 
+            font-size: 1rem;
+
             font-weight: 700;
 
             text-decoration: none;
 
+            cursor: pointer;
+
             transition: 0.25s ease;
         }
 
-        .download-btn:hover {
+
+        .action-btn:hover {
 
             color: #000000;
 
@@ -347,12 +405,118 @@
 
             box-shadow:
                 0 0 12px var(--cyan),
-                0 0 30px rgba(0,234,255,0.5);
+                0 0 30px rgba(0, 234, 255, 0.5);
         }
 
-        /*
-        NÚT QUAY LẠI
-        */
+
+        /* =========================
+           FILE LIST
+        ========================== */
+
+        .file-download-area {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            border-radius: 10px;
+        }
+
+
+        .file-download-area:target {
+
+            display: block;
+        }
+
+
+        .file-title {
+
+            margin-bottom: 20px;
+
+            font-size: 1.3rem;
+        }
+
+
+        .file-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .file-btn {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            padding: 13px 16px;
+
+            color: #ffffff;
+
+            background: rgba(30, 41, 59, 0.9);
+
+            border: 2px solid #334155;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: 0.25s ease;
+        }
+
+
+        .file-btn:hover {
+
+            color: #000000;
+
+            background: var(--cyan);
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 15px rgba(0, 234, 255, 0.5);
+        }
+
+
+        .file-name {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-align: left;
+
+            word-break: break-word;
+        }
+
+
+        .download-icon {
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           BACK HOME
+        ========================== */
 
         .back-home {
 
@@ -369,14 +533,16 @@
             transition: 0.2s ease;
         }
 
+
         .back-home:hover {
 
             color: var(--cyan);
         }
 
-        /*
-        FOOTER
-        */
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         .footer {
 
@@ -395,9 +561,10 @@
             font-size: 0.85rem;
         }
 
-        /*
-        MOBILE
-        */
+
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 700px) {
 
@@ -419,7 +586,7 @@
                 padding: 35px 15px;
             }
 
-            .furina-card {
+            .content-card {
                 padding: 25px 15px;
             }
 
@@ -431,25 +598,36 @@
                 max-height: 55vh;
             }
 
-            .download-btn {
-                width: 100%;
+            .action-btn {
+                font-size: 0.9rem;
             }
+
+            .file-download-area {
+                padding: 18px 12px;
+            }
+
+            .file-btn {
+                font-size: 0.8rem;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
 
-    <!-- THANH TRÊN -->
+    <!-- TOP BAR -->
 
     <header class="top-bar">
 
         <div class="site-name">
             NKGD012-TECH WEB
         </div>
+
 
         <a
             class="home-btn"
@@ -465,11 +643,12 @@
     </header>
 
 
-    <!-- NỘI DUNG -->
+
+    <!-- MAIN -->
 
     <main>
 
-        <section class="furina-card">
+        <section class="content-card">
 
 
             <h1 class="title">
@@ -501,38 +680,135 @@
 
             <div class="download-area">
 
+
                 <h2 class="download-title">
-
                     DOWNLOAD
-
                 </h2>
 
 
                 <p class="download-description">
 
-                    Nhấn vào nút bên dưới để truy cập
-                    repository GitHub và tải
-                    Furina Theme Collection.
+                    Chọn một trong các tùy chọn bên dưới
+                    để truy cập GitHub hoặc tải trực tiếp
+                    các file Furina Theme.
 
                 </p>
 
 
-                <a
-                    class="download-btn"
+                <div class="button-group">
 
-                    href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
 
-                    target="_blank"
+                    <!-- GITHUB -->
 
-                    rel="noopener noreferrer"
+                    <a
+                        class="action-btn"
+
+                        href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+                    >
+
+                        <i class="fab fa-github"></i>
+
+                        OPEN GITHUB PAGE
+
+                    </a>
+
+
+                    <!-- DOWNLOAD FILES -->
+
+                    <a
+                        class="action-btn"
+
+                        href="#download-files"
+                    >
+
+                        <i class="fas fa-download"></i>
+
+                        DOWNLOAD FILES
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- FILES -->
+
+                <div
+                    id="download-files"
+                    class="file-download-area"
                 >
 
-                    <i class="fab fa-github"></i>
 
-                    DOWNLOAD FURINA THEME
+                    <h3 class="file-title">
 
-                </a>
+                        SELECT A FILE TO DOWNLOAD
 
+                    </h3>
+
+
+                    <div class="file-list">
+
+
+                        <!-- FILE 1 -->
+
+                        <a
+                            class="file-btn"
+
+                            href="./GenshiImpactVH.zip"
+
+                            download="GenshiImpactVH.zip"
+                        >
+
+                            <span class="file-name">
+
+                                <i class="fas fa-file-zipper"></i>
+
+                                GenshiImpactVH.zip
+
+                            </span>
+
+
+                            <i class="fas fa-download download-icon"></i>
+
+                        </a>
+
+
+
+                        <!-- FILE 2 -->
+
+                        <a
+                            class="file-btn"
+
+                            href="./furina.theme.collection.zip"
+
+                            download="furina.theme.collection.zip"
+                        >
+
+                            <span class="file-name">
+
+                                <i class="fas fa-file-zipper"></i>
+
+                                furina.theme.collection.zip
+
+                            </span>
+
+
+                            <i class="fas fa-download download-icon"></i>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BACK -->
 
                 <a
                     class="back-home"
@@ -547,12 +823,14 @@
 
                 </a>
 
+
             </div>
 
 
         </section>
 
     </main>
+
 
 
     <footer class="footer">
