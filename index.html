@@ -13,9 +13,7 @@
     <title>NKGD012-TECH Web</title>
 
 
-    <!-- =========================
-         GOOGLE FONTS
-    ========================== -->
+    <!-- GOOGLE FONTS -->
 
     <link
         rel="preconnect"
@@ -34,70 +32,19 @@
     >
 
 
-    <!-- =========================
-         FONT AWESOME
-    ========================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
-
-
     <style>
 
-        /* =================================
-           ROOT COLORS
-        ================================= */
-
-        :root {
-
-            --dark: #0a0e17;
-
-            --panel: rgba(15, 23, 42, 0.88);
-
-            --blue: #3a82f6;
-
-            --cyan: #00f2ff;
-
-            --white: #eeeeee;
-
-            --muted: #94a3b8;
-
-            --border: #334155;
-
-        }
-
-
-        /* =================================
-           RESET
-        ================================= */
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
 
-
-        /* =================================
-           HTML
-        ================================= */
 
         html {
-
             scroll-behavior: smooth;
-
         }
 
-
-        /* =================================
-           BODY
-        ================================= */
 
         body {
 
@@ -117,30 +64,18 @@
 
             overflow-x: hidden;
 
-            color: var(--white);
+            color: #eeeeee;
 
             font-family: "Changa", sans-serif;
 
-
-            /*
-                NỀN WEBSITE
-
-                Nếu bạn muốn dùng ảnh nền riêng
-                có thể thay URL bên dưới.
-            */
-
-            background-image:
+            background:
 
                 linear-gradient(
-
                     rgba(10, 14, 23, 0.65),
-
                     rgba(10, 14, 23, 0.82)
-
                 ),
 
                 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop");
-
 
             background-size: cover;
 
@@ -153,52 +88,7 @@
         }
 
 
-        /* =================================
-           BACKGROUND LIGHT EFFECT
-        ================================= */
-
-        body::after {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 0;
-
-            pointer-events: none;
-
-
-            background:
-
-                radial-gradient(
-
-                    circle at 20% 20%,
-
-                    rgba(0, 242, 255, 0.10),
-
-                    transparent 30%
-
-                ),
-
-
-                radial-gradient(
-
-                    circle at 80% 80%,
-
-                    rgba(58, 130, 246, 0.12),
-
-                    transparent 35%
-
-                );
-
-        }
-
-
-        /* =================================
-           TOP LEFT WELCOME
-        ================================= */
+        /* TOP LEFT */
 
         .top-left-welcome {
 
@@ -210,17 +100,15 @@
 
             z-index: 10;
 
-
             padding-left: 10px;
 
+            border-left: 3px solid #3a82f6;
 
-            border-left: 3px solid var(--blue);
+            color: #ffffff;
 
-
-            color: var(--white);
-
-
-            font-family: "Share Tech Mono", monospace;
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
             font-size: 1.1rem;
 
@@ -228,17 +116,13 @@
 
             text-transform: uppercase;
 
-
             text-shadow:
-
-                2px 2px 4px rgba(0, 0, 0, 0.8);
+                2px 2px 4px rgba(0,0,0,0.8);
 
         }
 
 
-        /* =================================
-           TOP RIGHT PROFILE
-        ================================= */
+        /* TOP RIGHT */
 
         .top-right-profile {
 
@@ -253,10 +137,6 @@
         }
 
 
-        /* =================================
-           GITHUB BUTTON
-        ================================= */
-
         .follow-btn {
 
             display: inline-flex;
@@ -267,34 +147,31 @@
 
             gap: 8px;
 
-
             padding: 9px 16px;
-
 
             color: #ffffff;
 
-            background: rgba(15, 23, 42, 0.85);
+            background:
+                rgba(15, 23, 42, 0.85);
 
-
-            border: 2px solid var(--border);
+            border:
+                2px solid #334155;
 
             border-radius: 5px;
 
-
-            font-family: "Share Tech Mono", monospace;
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
             font-size: 0.9rem;
 
             text-transform: uppercase;
 
-
             text-decoration: none;
-
 
             backdrop-filter: blur(8px);
 
-
-            transition: all 0.2s ease;
+            transition: 0.2s;
 
         }
 
@@ -303,24 +180,20 @@
 
             color: #000000;
 
-            background: var(--cyan);
+            background: #00f2ff;
 
             border-color: #ffffff;
 
-
             transform: scale(1.05);
 
-
             box-shadow:
-
-                0 0 15px rgba(0, 242, 255, 0.8);
+                0 0 15px
+                rgba(0,242,255,0.8);
 
         }
 
 
-        /* =================================
-           MAIN PANEL
-        ================================= */
+        /* MAIN PANEL */
 
         .main-center-panel {
 
@@ -328,42 +201,35 @@
 
             z-index: 10;
 
-
             width: 100%;
 
             max-width: 550px;
 
-
             padding: 40px 50px;
-
 
             text-align: center;
 
+            background:
+                rgba(15, 23, 42, 0.88);
 
-            background: var(--panel);
+            border:
+                2px solid #1e293b;
 
-
-            border: 2px solid #1e293b;
-
-            border-top: 4px solid var(--blue);
-
+            border-top:
+                4px solid #3a82f6;
 
             border-radius: 8px;
 
-
             backdrop-filter: blur(12px);
 
-
             box-shadow:
-
-                0 20px 50px rgba(0, 0, 0, 0.9);
+                0 20px 50px
+                rgba(0,0,0,0.9);
 
         }
 
 
-        /* =================================
-           AVATAR FRAME
-        ================================= */
+        /* AVATAR */
 
         .avatar-circle-frame {
 
@@ -371,40 +237,24 @@
 
             height: 150px;
 
-
-            margin: 0 auto 20px;
-
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
+            margin:
+                0 auto 20px;
 
             overflow: hidden;
 
-
             background: #000000;
 
-
-            border: 3px solid var(--blue);
+            border:
+                3px solid #3a82f6;
 
             border-radius: 50%;
 
-
             box-shadow:
-
-                0 0 20px rgba(58, 130, 246, 0.6),
-
-                0 0 40px rgba(0, 242, 255, 0.15);
+                0 0 20px
+                rgba(58,130,246,0.6);
 
         }
 
-
-        /* =================================
-           AVATAR IMAGE
-        ================================= */
 
         .avatar-img {
 
@@ -412,54 +262,35 @@
 
             height: 100%;
 
-
             display: block;
 
-
             object-fit: cover;
-
-
-            filter:
-
-                contrast(105%)
-
-                brightness(105%);
 
         }
 
 
-        /* =================================
-           PROFILE NAME
-        ================================= */
+        /* NAME */
 
         .profile-name {
 
             margin-bottom: 25px;
 
-
             color: #ffffff;
-
 
             font-size: 2.2rem;
 
             font-weight: 800;
 
-
             letter-spacing: 2px;
 
-
             text-shadow:
-
-                2px 2px 4px rgba(0, 0, 0, 0.9),
-
-                0 0 10px rgba(0, 242, 255, 0.15);
+                2px 2px 4px
+                rgba(0,0,0,0.9);
 
         }
 
 
-        /* =================================
-           RELEASE BUTTONS
-        ================================= */
+        /* BUTTON GROUP */
 
         .release-buttons-group {
 
@@ -472,9 +303,7 @@
         }
 
 
-        /* =================================
-           RELEASE BUTTON
-        ================================= */
+        /* RELEASE BUTTON */
 
         .release-btn {
 
@@ -484,41 +313,29 @@
 
             justify-content: center;
 
-            gap: 12px;
-
-
             width: 100%;
-
 
             padding: 13px 20px;
 
-
             color: #ffffff;
 
-            background: rgba(30, 41, 59, 0.92);
+            background:
+                rgba(30,41,59,0.92);
 
-
-            border: 2px solid var(--border);
+            border:
+                2px solid #334155;
 
             border-radius: 5px;
-
-
-            font-family: "Changa", sans-serif;
 
             font-size: 1rem;
 
             font-weight: 600;
 
-
             text-transform: uppercase;
 
             text-decoration: none;
 
-
-            cursor: pointer;
-
-
-            transition: all 0.2s ease;
+            transition: 0.2s;
 
         }
 
@@ -527,24 +344,21 @@
 
             color: #000000;
 
-            background: var(--cyan);
+            background: #00f2ff;
 
             border-color: #ffffff;
 
-
-            transform: translateY(-3px);
-
+            transform:
+                translateY(-3px);
 
             box-shadow:
-
-                0 0 20px rgba(0, 242, 255, 0.8);
+                0 0 20px
+                rgba(0,242,255,0.8);
 
         }
 
 
-        /* =================================
-           FOOTER
-        ================================= */
+        /* FOOTER */
 
         .bottom-left-footer {
 
@@ -556,142 +370,100 @@
 
             z-index: 10;
 
+            color: #94a3b8;
 
-            color: var(--muted);
-
-
-            font-family: "Share Tech Mono", monospace;
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
             font-size: 0.9rem;
 
             letter-spacing: 1px;
 
-
-            text-shadow:
-
-                1px 1px 2px rgba(0, 0, 0, 0.8);
-
         }
 
 
-        /* =================================
-           MUSIC BUTTON
-        ================================= */
+        /* MUSIC BUTTON */
 
         .music-button {
 
             position: fixed;
 
+            right: 20px;
 
-            right: 25px;
+            bottom: 20px;
 
-            bottom: 25px;
+            z-index: 99999;
 
+            padding: 12px 18px;
 
-            z-index: 9999;
+            color: #000000;
 
+            background: #00f2ff;
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-
-            padding: 10px 16px;
-
-
-            color: #ffffff;
-
-            background: rgba(15, 23, 42, 0.9);
-
-
-            border: 2px solid var(--border);
+            border:
+                2px solid #ffffff;
 
             border-radius: 8px;
 
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
-            font-family: "Share Tech Mono", monospace;
+            font-size: 14px;
 
-            font-size: 0.85rem;
-
+            font-weight: bold;
 
             cursor: pointer;
 
+            box-shadow:
+                0 0 15px
+                rgba(0,242,255,0.8);
 
-            backdrop-filter: blur(10px);
-
-
-            transition: all 0.25s ease;
+            transition: 0.2s;
 
         }
 
-
-        /* =================================
-           MUSIC BUTTON HOVER
-        ================================= */
 
         .music-button:hover {
 
-            color: #000000;
-
-            background: var(--cyan);
-
-            border-color: #ffffff;
-
-
-            transform: translateY(-3px);
-
+            transform:
+                translateY(-3px);
 
             box-shadow:
-
-                0 0 15px rgba(0, 242, 255, 0.8),
-
-                0 0 30px rgba(0, 242, 255, 0.3);
+                0 0 25px
+                #00f2ff;
 
         }
 
 
-        /* =================================
-           MUSIC BUTTON PLAYING
-        ================================= */
+        .music-button.off {
 
-        .music-button.playing {
+            color: #ffffff;
 
-            color: #000000;
+            background:
+                rgba(10,14,23,0.95);
 
-            background: var(--cyan);
+            border-color:
+                #334155;
 
-            border-color: #ffffff;
-
-
-            box-shadow:
-
-                0 0 15px rgba(0, 242, 255, 0.8),
-
-                0 0 30px rgba(0, 242, 255, 0.3);
+            box-shadow: none;
 
         }
 
 
-        /* =================================
-           MOBILE
-        ================================= */
+        /* MOBILE */
 
         @media (max-width: 600px) {
 
-
             body {
 
-                justify-content: flex-start;
+                justify-content:
+                    flex-start;
 
                 padding-top: 100px;
 
                 padding-bottom: 100px;
-
-                overflow-y: auto;
 
             }
 
@@ -702,9 +474,7 @@
 
                 left: 15px;
 
-                font-size: 0.8rem;
-
-                letter-spacing: 1px;
+                font-size: 0.75rem;
 
             }
 
@@ -720,16 +490,19 @@
 
             .follow-btn {
 
-                padding: 7px 11px;
+                padding:
+                    7px 11px;
 
-                font-size: 0.7rem;
+                font-size:
+                    0.7rem;
 
             }
 
 
             .main-center-panel {
 
-                padding: 30px 20px;
+                padding:
+                    30px 20px;
 
             }
 
@@ -745,14 +518,16 @@
 
             .profile-name {
 
-                font-size: 1.8rem;
+                font-size:
+                    1.8rem;
 
             }
 
 
             .release-btn {
 
-                font-size: 0.85rem;
+                font-size:
+                    0.85rem;
 
             }
 
@@ -763,7 +538,8 @@
 
                 left: 15px;
 
-                font-size: 0.7rem;
+                font-size:
+                    0.7rem;
 
             }
 
@@ -773,10 +549,6 @@
                 right: 15px;
 
                 bottom: 15px;
-
-                padding: 9px 12px;
-
-                font-size: 0.7rem;
 
             }
 
@@ -790,22 +562,18 @@
 <body>
 
 
-    <!-- =================================
-         BACKGROUND MUSIC
-    ================================= -->
+    <!-- NHẠC NỀN -->
 
     <audio
         id="backgroundMusic"
         src="./menuLoop.mp3"
+        autoplay
         loop
         preload="auto"
     ></audio>
 
 
-
-    <!-- =================================
-         TOP LEFT
-    ================================= -->
+    <!-- WELCOME -->
 
     <div class="top-left-welcome">
 
@@ -814,10 +582,7 @@
     </div>
 
 
-
-    <!-- =================================
-         TOP RIGHT
-    ================================= -->
+    <!-- GITHUB -->
 
     <div class="top-right-profile">
 
@@ -828,19 +593,14 @@
             class="follow-btn"
         >
 
-            <i class="fab fa-github"></i>
-
-            follow my account
+            GitHub
 
         </a>
 
     </div>
 
 
-
-    <!-- =================================
-         MAIN PROFILE
-    ================================= -->
+    <!-- MAIN -->
 
     <main class="main-center-panel">
 
@@ -850,13 +610,12 @@
         <div class="avatar-circle-frame">
 
             <img
-                class="avatar-img"
                 src="./avatar.jpg"
                 alt="NKGD2k12_VN Avatar"
+                class="avatar-img"
             >
 
         </div>
-
 
 
         <!-- NAME -->
@@ -868,142 +627,94 @@
         </div>
 
 
-
         <!-- BUTTONS -->
 
         <div class="release-buttons-group">
 
-
-            <!-- =================================
-                 FURINA
-            ================================= -->
 
             <a
                 href="./furina.html"
                 class="release-btn"
             >
 
-                <i class="fas fa-palette"></i>
-
-                Furina Theme Collection
+                🎨 Furina Theme Collection
 
             </a>
 
-
-
-            <!-- =================================
-                 GDA
-            ================================= -->
 
             <a
                 href="./GDA.html"
                 class="release-btn"
             >
 
-                <i class="fas fa-save"></i>
-
-                GDA Save File
+                🎮 GDA Save File
 
             </a>
 
 
         </div>
 
-
     </main>
 
 
-
-    <!-- =================================
-         FOOTER
-    ================================= -->
+    <!-- FOOTER -->
 
     <div class="bottom-left-footer">
 
         nkgd012-tech (nkgd2k12_vn)
-
         &nbsp;&bull;&nbsp;
-
         ©2026
 
     </div>
 
 
-
-    <!-- =================================
-         MUSIC BUTTON
-    ================================= -->
+    <!-- MUSIC BUTTON -->
 
     <button
         id="musicButton"
         class="music-button"
         type="button"
-        aria-label="Bật hoặc tắt nhạc"
     >
 
-        <i class="fas fa-volume-xmark"></i>
-
-        <span>MUSIC OFF</span>
+        🔊 MUSIC ON
 
     </button>
 
 
-
-    <!-- =================================
-         JAVASCRIPT
-    ================================= -->
-
     <script>
 
-        /*
-        ==================================
-        LẤY CÁC PHẦN TỬ
-        ==================================
-        */
-
         const music =
-            document.getElementById("backgroundMusic");
+            document.getElementById(
+                "backgroundMusic"
+            );
 
         const musicButton =
-            document.getElementById("musicButton");
+            document.getElementById(
+                "musicButton"
+            );
 
 
-        /*
-        ==================================
-        HÀM CẬP NHẬT NÚT
-        ==================================
-        */
+        let musicOn = true;
+
 
         function updateMusicButton() {
 
+            if (musicOn) {
 
-            if (music.paused) {
-
-
-                musicButton.innerHTML =
-
-                    '<i class="fas fa-volume-xmark"></i>' +
-
-                    '<span>MUSIC OFF</span>';
-
+                musicButton.textContent =
+                    "🔊 MUSIC ON";
 
                 musicButton.classList.remove(
-                    "playing"
+                    "off"
                 );
-
 
             } else {
 
-
-                musicButton.innerHTML =
-
-                    '<i class="fas fa-volume-high"></i>' +
-
-                    '<span>MUSIC ON</span>';
-
+                musicButton.textContent =
+                    "🔇 MUSIC OFF";
 
                 musicButton.classList.add(
-                    "playing"
+                    "off"
                 );
 
             }
@@ -1011,105 +722,65 @@
         }
 
 
-        /*
-        ==================================
-        BẬT / TẮT NHẠC
-        ==================================
-        */
-
         musicButton.addEventListener(
             "click",
-            async function () {
+            function () {
 
+                if (musicOn) {
 
-                try {
+                    music.pause();
 
+                    musicOn = false;
 
-                    if (music.paused) {
+                } else {
 
+                    music.play()
+                        .then(function () {
 
-                        await music.play();
+                            musicOn = true;
 
+                            updateMusicButton();
 
-                        updateMusicButton();
+                        })
+                        .catch(function () {
 
+                            console.log(
+                                "Không thể phát nhạc."
+                            );
 
-                    } else {
+                        });
 
-
-                        music.pause();
-
-
-                        updateMusicButton();
-
-
-                    }
-
-
-                } catch (error) {
-
-
-                    console.log(
-                        "Không thể phát nhạc:",
-                        error
-                    );
-
+                    return;
 
                 }
 
+
+                updateMusicButton();
+
             }
         );
 
 
-        /*
-        ==================================
-        ĐẢM BẢO NÚT LUÔN ĐỒNG BỘ
-        ==================================
-        */
-
-        music.addEventListener(
-            "play",
-            updateMusicButton
-        );
-
-
-        music.addEventListener(
-            "pause",
-            updateMusicButton
-        );
-
-
-        /*
-        ==================================
-        NHẠC PHÁT LẶP LIÊN TỤC
-        ==================================
-
-        Thuộc tính loop ở thẻ audio đã đảm bảo
-        nhạc tự động quay lại từ đầu khi hết bài.
-
-        Đoạn này là lớp bảo vệ bổ sung.
-        ==================================
-        */
-
-        music.addEventListener(
-            "ended",
+        window.addEventListener(
+            "load",
             function () {
 
-                music.currentTime = 0;
+                musicOn = true;
 
-                music.play();
+                updateMusicButton();
+
+
+                music.play()
+                    .catch(function () {
+
+                        console.log(
+                            "Autoplay bị trình duyệt chặn. Hãy bấm MUSIC ON."
+                        );
+
+                    });
 
             }
         );
-
-
-        /*
-        ==================================
-        TRẠNG THÁI BAN ĐẦU
-        ==================================
-        */
-
-        updateMusicButton();
 
     </script>
 
