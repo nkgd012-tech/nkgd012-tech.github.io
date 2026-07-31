@@ -2,55 +2,986 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>nkgd012-tech Web</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
-:root{--bg:#09111d;--blue:#3a82f6;--cyan:#00eaff;--text:#fff;}
-*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+    --blue:#3a82f6;
+    --cyan:#00eaff;
+    --muted:#aab6ca;
+    --panel:rgba(12,20,35,.86);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-font-family:Changa,sans-serif;
-background:linear-gradient(rgba(8,12,22,.72),rgba(8,12,22,.72)),url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop") center/cover fixed;
-min-height:100vh;color:var(--text);display:flex;justify-content:center;align-items:center;padding:30px}
-.top-left,.top-right,.footer{position:fixed;z-index:5;font-family:"Share Tech Mono",monospace}
-.top-left{top:20px;left:20px;border-left:3px solid var(--blue);padding-left:10px}
-.top-right{top:20px;right:20px}
-.footer{bottom:20px;left:20px;color:#b7c4d8}
-.follow,.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;border:2px solid #3b4b63;background:rgba(18,27,45,.8);padding:12px 18px;border-radius:8px;transition:.25s}
-.follow:hover,.btn:hover{background:var(--cyan);color:#000;transform:translateY(-2px);box-shadow:0 0 20px var(--cyan)}
-.card{max-width:560px;width:100%;background:rgba(18,27,45,.78);backdrop-filter:blur(10px);padding:40px;border-top:4px solid var(--blue);border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,.6);text-align:center}
-.avatar{width:160px;height:160px;margin:auto;border-radius:50%;overflow:hidden;border:3px solid var(--blue);box-shadow:0 0 20px rgba(58,130,246,.8)}
-.avatar img{width:100%;height:100%;object-fit:cover;transition:.35s}
-.avatar img:hover{transform:scale(1.08)}
-h1{margin:20px 0;font-size:2.2rem;text-shadow:0 0 15px var(--cyan)}
-.buttons{display:flex;flex-direction:column;gap:15px}
-@media(max-width:600px){.card{padding:28px}h1{font-size:1.8rem}}
+
+    font-family:"Changa",sans-serif;
+
+    color:#fff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:
+        linear-gradient(
+            rgba(5,9,18,.58),
+            rgba(5,9,18,.72)
+        ),
+        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+        center/cover fixed;
+}
+
+
+/* HIỆU ỨNG ÁNH SÁNG NỀN */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,234,255,.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(139,92,246,.12),
+            transparent 30%
+        );
+
+    animation:ambient 7s ease-in-out infinite alternate;
+}
+
+
+@keyframes ambient{
+
+    from{
+        opacity:.45;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* WELCOME */
+
+.top-left{
+
+    position:fixed;
+
+    top:22px;
+
+    left:22px;
+
+    z-index:20;
+
+    font-family:"Share Tech Mono",monospace;
+
+    font-size:1rem;
+
+    letter-spacing:2px;
+
+    border-left:3px solid var(--blue);
+
+    padding-left:12px;
+
+    text-shadow:0 2px 8px #000;
+
+}
+
+
+/* GITHUB PROFILE */
+
+.top-right{
+
+    position:fixed;
+
+    top:18px;
+
+    right:22px;
+
+    z-index:20;
+
+}
+
+
+/* CÁC NÚT */
+
+.follow-btn,
+.release-btn,
+.download-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:rgba(20,31,52,.88);
+
+    border:2px solid #405273;
+
+    border-radius:8px;
+
+    transition:.25s ease;
+
+}
+
+
+.follow-btn{
+
+    padding:10px 18px;
+
+    font-family:"Share Tech Mono",monospace;
+
+}
+
+
+.follow-btn:hover,
+.release-btn:hover,
+.download-btn:hover{
+
+    background:var(--cyan);
+
+    color:#000;
+
+    border-color:#fff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 0 12px var(--cyan),
+
+        0 0 30px rgba(0,234,255,.45);
+
+}
+
+
+/* MAIN */
+
+main{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+}
+
+
+/* TRANG CHÍNH */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 25px;
+
+}
+
+
+.main-panel{
+
+    width:100%;
+
+    max-width:560px;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:var(--panel);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-top:4px solid var(--blue);
+
+    border-radius:15px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.65);
+
+}
+
+
+/* AVATAR */
+
+.avatar-frame{
+
+    width:170px;
+
+    height:170px;
+
+    margin:0 auto 24px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:3px solid var(--blue);
+
+    background:#000;
+
+    box-shadow:
+
+        0 0 15px var(--blue),
+
+        0 0 35px rgba(58,130,246,.55);
+
+}
+
+
+.avatar-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:.35s ease;
+
+}
+
+
+.avatar-frame:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* TÊN */
+
+.profile-name{
+
+    font-size:2.4rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    margin-bottom:28px;
+
+    text-shadow:
+
+        0 0 8px var(--cyan),
+
+        0 0 25px rgba(0,234,255,.75);
+
+}
+
+
+/* NHÓM NÚT */
+
+.button-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+
+.release-btn{
+
+    width:100%;
+
+    padding:14px 20px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+}
+
+
+/* KHU VỰC DOWNLOAD */
+
+.download-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 25px;
+
+    scroll-margin-top:20px;
+
+}
+
+
+.download-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:var(--panel);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-top:4px solid var(--blue);
+
+    border-radius:15px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.65);
+
+}
+
+
+.download-card h2{
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+    text-shadow:
+
+        0 0 10px var(--cyan),
+
+        0 0 25px rgba(0,234,255,.7);
+
+}
+
+
+.download-card > p{
+
+    color:var(--muted);
+
+    margin-bottom:25px;
+
+}
+
+
+/* ẢNH FURINA + GDA */
+
+.preview-image{
+
+    display:block;
+
+    width:100%;
+
+    max-width:640px;
+
+    max-height:70vh;
+
+    object-fit:contain;
+
+    margin:20px auto;
+
+    border-radius:12px;
+
+    border:2px solid var(--blue);
+
+    box-shadow:
+
+        0 0 15px rgba(58,130,246,.65),
+
+        0 0 40px rgba(0,234,255,.18);
+
+}
+
+
+/* KHU VỰC NÚT DOWNLOAD */
+
+.download-content{
+
+    margin-top:35px;
+
+    padding-top:28px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+
+.download-content p{
+
+    color:var(--muted);
+
+    margin-bottom:20px;
+
+}
+
+
+.download-btn{
+
+    padding:14px 24px;
+
+    font-weight:700;
+
+}
+
+
+/* NÚT QUAY LẠI */
+
+.back-btn{
+
+    display:inline-flex;
+
+    margin-top:18px;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    transition:.2s;
+
+}
+
+
+.back-btn:hover{
+
+    color:var(--cyan);
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+    position:relative;
+
+    z-index:3;
+
+    padding:20px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-family:"Share Tech Mono",monospace;
+
+    font-size:.9rem;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .top-left{
+
+        top:14px;
+
+        left:14px;
+
+        font-size:.72rem;
+
+        letter-spacing:1px;
+
+    }
+
+
+    .top-right{
+
+        top:10px;
+
+        right:12px;
+
+    }
+
+
+    .follow-btn{
+
+        padding:7px 10px;
+
+        font-size:.72rem;
+
+    }
+
+
+    .hero{
+
+        padding:90px 15px 50px;
+
+    }
+
+
+    .main-panel{
+
+        padding:30px 20px;
+
+    }
+
+
+    .avatar-frame{
+
+        width:145px;
+
+        height:145px;
+
+    }
+
+
+    .profile-name{
+
+        font-size:1.8rem;
+
+    }
+
+
+    .download-section{
+
+        padding:60px 15px;
+
+    }
+
+
+    .download-card{
+
+        padding:25px 15px;
+
+    }
+
+
+    .download-card h2{
+
+        font-size:1.5rem;
+
+    }
+
+
+    .preview-image{
+
+        max-height:55vh;
+
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
-<div class="top-left">WELCOME TO NKGD012-TECH WEB</div>
+
+
+<!-- WELCOME -->
+
+<div class="top-left">
+
+    WELCOME TO NKGD012-TECH WEB
+
+</div>
+
+
+<!-- GITHUB -->
+
 <div class="top-right">
-<a class="follow" href="https://github.com/nkgd012-tech" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Follow my account</a>
+
+    <a
+        class="follow-btn"
+
+        href="https://github.com/nkgd012-tech"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+    >
+
+        <i class="fab fa-github"></i>
+
+        FOLLOW MY ACCOUNT
+
+    </a>
+
 </div>
 
-<div class="card">
-<div class="avatar">
-<img src="avatar.jpg" alt="Avatar">
-</div>
-<h1>NKGD2K12_VN</h1>
-<div class="buttons">
-<a class="btn" href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware." target="_blank" rel="noopener noreferrer">
-<i class="fas fa-palette"></i> Furina Theme Collection
-</a>
-<a class="btn" href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300" target="_blank" rel="noopener noreferrer">
-<i class="fas fa-save"></i> GDA Save File
-</a>
-</div>
+
+
+<main>
+
+
+<!-- =========================
+     TRANG CHÍNH
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+
+    <div class="main-panel">
+
+
+        <!-- AVATAR -->
+
+        <div class="avatar-frame">
+
+            <img
+
+                src="avatar.jpg"
+
+                alt="NKGD2K12_VN Avatar"
+
+            >
+
+        </div>
+
+
+        <!-- TÊN -->
+
+        <div class="profile-name">
+
+            NKGD2K12_VN
+
+        </div>
+
+
+        <!-- CÁC NÚT -->
+
+        <div class="button-group">
+
+
+            <!-- NÚT FURINA -->
+
+            <a
+
+                class="release-btn"
+
+                href="#furina-download"
+
+            >
+
+                <i class="fas fa-palette"></i>
+
+                FURINA THEME COLLECTION
+
+            </a>
+
+
+
+            <!-- NÚT GDA -->
+
+            <a
+
+                class="release-btn"
+
+                href="#gda-download"
+
+            >
+
+                <i class="fas fa-gamepad"></i>
+
+                GEOMETRY DASH ADVANCE SAVE FILE
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FURINA DOWNLOAD
+========================= -->
+
+<section
+
+    class="download-section"
+
+    id="furina-download"
+
+>
+
+
+    <div class="download-card">
+
+
+        <h2>
+
+            <i class="fas fa-palette"></i>
+
+            Furina Theme Collection
+
+        </h2>
+
+
+        <p>
+
+            Preview Furina Theme Collection
+
+        </p>
+
+
+        <!-- ẢNH FURINA -->
+
+        <img
+
+            class="preview-image"
+
+            src="muxconfig.png"
+
+            alt="Furina Theme Collection Preview"
+
+        >
+
+
+        <!-- DOWNLOAD -->
+
+        <div class="download-content">
+
+
+            <p>
+
+                Kéo xuống để tải Furina Theme Collection.
+
+            </p>
+
+
+            <a
+
+                class="download-btn"
+
+                href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+            >
+
+                <i class="fab fa-github"></i>
+
+                DOWNLOAD FURINA THEME
+
+            </a>
+
+
+            <br>
+
+
+            <a
+
+                class="back-btn"
+
+                href="#home"
+
+            >
+
+                <i class="fas fa-arrow-up"></i>
+
+                &nbsp;
+
+                Quay lại trang chính
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     GDA DOWNLOAD
+========================= -->
+
+<section
+
+    class="download-section"
+
+    id="gda-download"
+
+>
+
+
+    <div class="download-card">
+
+
+        <h2>
+
+            <i class="fas fa-gamepad"></i>
+
+            Geometry Dash Advance
+
+        </h2>
+
+
+        <p>
+
+            Geometry Dash Advance Legit Save File
+
+        </p>
+
+
+        <!-- ẢNH GDA -->
+
+        <img
+
+            class="preview-image"
+
+            src="GDA.jpg"
+
+            alt="Geometry Dash Advance Save File Preview"
+
+        >
+
+
+        <!-- DOWNLOAD -->
+
+        <div class="download-content">
+
+
+            <p>
+
+                Kéo xuống để tải Geometry Dash Advance Legit Save File.
+
+            </p>
+
+
+            <a
+
+                class="download-btn"
+
+                href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+            >
+
+                <i class="fab fa-github"></i>
+
+                DOWNLOAD GDA SAVE FILE
+
+            </a>
+
+
+            <br>
+
+
+            <a
+
+                class="back-btn"
+
+                href="#home"
+
+            >
+
+                <i class="fas fa-arrow-up"></i>
+
+                &nbsp;
+
+                Quay lại trang chính
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+    nkgd012-tech (NKGD2K12_VN)
+
+    &nbsp;&bull;&nbsp;
+
+    © 2026
+
 </div>
 
-<div class="footer">nkgd012-tech (NKGD2K12_VN) © 2026</div>
+
 </body>
+
 </html>
