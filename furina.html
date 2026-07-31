@@ -19,6 +19,12 @@
     >
 
     <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
         href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap"
         rel="stylesheet"
     >
@@ -27,14 +33,20 @@
     <style>
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
 
 
         html {
+
             scroll-behavior: smooth;
+
         }
 
 
@@ -64,10 +76,14 @@
 
             background-position: center;
 
+            background-repeat: no-repeat;
+
             background-attachment: fixed;
 
         }
 
+
+        /* BACK BUTTON */
 
         .top-bar {
 
@@ -125,6 +141,8 @@
         }
 
 
+        /* CONTAINER */
+
         .container {
 
             width: 100%;
@@ -135,6 +153,8 @@
 
         }
 
+
+        /* PANEL */
 
         .panel {
 
@@ -163,18 +183,28 @@
         }
 
 
+        /* TITLE */
+
         .title {
 
             margin-bottom: 25px;
 
             color: #ffffff;
 
-            font-size: 2.2rem;
+            font-size:
+                2.2rem;
 
-            font-weight: 800;
+            font-weight:
+                800;
+
+            text-shadow:
+                0 0 10px
+                rgba(0,242,255,0.4);
 
         }
 
+
+        /* IMAGE */
 
         .preview-image {
 
@@ -199,6 +229,8 @@
         }
 
 
+        /* DESCRIPTION */
+
         .description {
 
             margin-bottom: 25px;
@@ -209,6 +241,8 @@
 
         }
 
+
+        /* BUTTONS */
 
         .buttons {
 
@@ -238,7 +272,8 @@
 
             border-radius: 6px;
 
-            font-weight: 600;
+            font-weight:
+                600;
 
             text-decoration: none;
 
@@ -265,7 +300,9 @@
         }
 
 
-        /* MUSIC BUTTON */
+        /* ==============================
+           MUSIC BUTTON
+        ============================== */
 
         .music-button {
 
@@ -275,7 +312,9 @@
 
             bottom: 20px;
 
-            z-index: 99999;
+            z-index: 999999;
+
+            display: block;
 
             padding:
                 12px 18px;
@@ -293,15 +332,31 @@
                 "Share Tech Mono",
                 monospace;
 
-            font-size: 14px;
+            font-size:
+                14px;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
             cursor: pointer;
 
             box-shadow:
                 0 0 15px
                 rgba(0,242,255,0.8);
+
+            transition: 0.2s;
+
+        }
+
+
+        .music-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 0 25px
+                #00f2ff;
 
         }
 
@@ -321,7 +376,9 @@
         }
 
 
-        @media (max-width:600px) {
+        /* MOBILE */
+
+        @media (max-width: 600px) {
 
             body {
 
@@ -365,18 +422,21 @@
 <body>
 
 
-    <!-- NHẠC -->
+    <!-- =================================
+         MUSIC
+    ================================== -->
 
     <audio
         id="backgroundMusic"
         src="./menuLoop.mp3"
-        autoplay
         loop
         preload="auto"
     ></audio>
 
 
-    <!-- BACK -->
+    <!-- =================================
+         BACK BUTTON
+    ================================== -->
 
     <div class="top-bar">
 
@@ -392,7 +452,9 @@
     </div>
 
 
-    <!-- CONTENT -->
+    <!-- =================================
+         CONTENT
+    ================================== -->
 
     <main class="container">
 
@@ -425,6 +487,8 @@
             <div class="buttons">
 
 
+                <!-- GITHUB -->
+
                 <a
                     href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
                     target="_blank"
@@ -437,6 +501,8 @@
                 </a>
 
 
+                <!-- FILE 1 -->
+
                 <a
                     href="./GenshiImpactVH.zip"
                     download
@@ -447,6 +513,8 @@
 
                 </a>
 
+
+                <!-- FILE 2 -->
 
                 <a
                     href="./furina.theme.collection.zip"
@@ -467,7 +535,9 @@
     </main>
 
 
-    <!-- MUSIC BUTTON -->
+    <!-- =================================
+         MUSIC BUTTON
+    ================================== -->
 
     <button
         id="musicButton"
@@ -482,10 +552,18 @@
 
     <script>
 
+        /*
+        =========================================
+        MUSIC SYSTEM
+        =========================================
+        */
+
+
         const music =
             document.getElementById(
                 "backgroundMusic"
             );
+
 
         const musicButton =
             document.getElementById(
@@ -495,6 +573,10 @@
 
         let musicOn = true;
 
+
+        /*
+        UPDATE BUTTON
+        */
 
         function updateMusicButton() {
 
@@ -521,6 +603,42 @@
         }
 
 
+        /*
+        START MUSIC
+        */
+
+        function startMusic() {
+
+            if (!musicOn) {
+
+                return;
+
+            }
+
+
+            music.play()
+                .then(function () {
+
+                    musicOn = true;
+
+                    updateMusicButton();
+
+                })
+                .catch(function () {
+
+                    console.log(
+                        "Autoplay đang bị trình duyệt chặn."
+                    );
+
+                });
+
+        }
+
+
+        /*
+        BUTTON ON / OFF
+        */
+
         musicButton.addEventListener(
             "click",
             function () {
@@ -530,6 +648,8 @@
                     music.pause();
 
                     musicOn = false;
+
+                    updateMusicButton();
 
                 } else {
 
@@ -542,16 +662,15 @@
 
                         });
 
-                    return;
-
                 }
-
-
-                updateMusicButton();
 
             }
         );
 
+
+        /*
+        AUTO PLAY
+        */
 
         window.addEventListener(
             "load",
@@ -561,18 +680,56 @@
 
                 updateMusicButton();
 
-
-                music.play()
-                    .catch(function () {
-
-                        console.log(
-                            "Autoplay bị chặn. Bấm MUSIC ON để phát nhạc."
-                        );
-
-                    });
+                startMusic();
 
             }
         );
+
+
+        /*
+        AUTOPLAY FALLBACK
+        */
+
+        function tryStartAfterInteraction() {
+
+            if (
+                musicOn &&
+                music.paused
+            ) {
+
+                startMusic();
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "touchstart",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
 
     </script>
 
