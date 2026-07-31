@@ -4,15 +4,12 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Geometry Dash Advance</title>
+    <title>Geometry Dash Advance | NKGD012-TECH</title>
 
 
-    <!-- GOOGLE FONT -->
+    <!-- GOOGLE FONTS -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -33,6 +30,21 @@
 
 
     <style>
+
+        :root {
+
+            --blue: #3a82f6;
+
+            --cyan: #00eaff;
+
+            --white: #ffffff;
+
+            --muted: #aab6ca;
+
+            --panel: rgba(12,20,35,0.88);
+
+        }
+
 
         * {
 
@@ -58,17 +70,21 @@
 
             overflow-x: hidden;
 
-            color: #ffffff;
+            color: var(--white);
 
             font-family: "Changa", sans-serif;
+
+            /*
+            ẢNH NỀN GIỐNG SẢNH CHÍNH
+            */
 
             background:
 
                 linear-gradient(
 
-                    rgba(5, 9, 18, 0.65),
+                    rgba(5,9,18,0.65),
 
-                    rgba(5, 9, 18, 0.80)
+                    rgba(5,9,18,0.80)
 
                 ),
 
@@ -79,15 +95,56 @@
         }
 
 
-        /* =========================
-           TOP BAR
-        ========================= */
+        /*
+        HIỆU ỨNG NỀN
+        */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+
+                    circle at 20% 20%,
+
+                    rgba(0,234,255,0.12),
+
+                    transparent 30%
+
+                ),
+
+                radial-gradient(
+
+                    circle at 80% 80%,
+
+                    rgba(139,92,246,0.12),
+
+                    transparent 30%
+
+                );
+
+        }
+
+
+        /*
+        TOP BAR
+        */
 
         .top-bar {
 
             position: relative;
 
-            z-index: 2;
+            z-index: 10;
 
             display: flex;
 
@@ -97,9 +154,9 @@
 
             padding: 20px 25px;
 
-            border-bottom: 1px solid rgba(255,255,255,.1);
+            background: rgba(5,10,20,0.65);
 
-            background: rgba(5,10,20,.65);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
 
             backdrop-filter: blur(10px);
 
@@ -110,7 +167,7 @@
 
             padding-left: 12px;
 
-            border-left: 3px solid #3a82f6;
+            border-left: 3px solid var(--blue);
 
             font-family: "Share Tech Mono", monospace;
 
@@ -121,9 +178,9 @@
         }
 
 
-        /* =========================
-           HOME BUTTON
-        ========================= */
+        /*
+        HOME
+        */
 
         .home-btn {
 
@@ -135,11 +192,11 @@
 
             gap: 8px;
 
-            padding: 9px 16px;
+            padding: 10px 18px;
 
             color: #ffffff;
 
-            background: rgba(20,31,52,.9);
+            background: rgba(20,31,52,0.9);
 
             border: 2px solid #405273;
 
@@ -147,7 +204,7 @@
 
             text-decoration: none;
 
-            transition: .25s ease;
+            transition: 0.25s ease;
 
         }
 
@@ -156,32 +213,32 @@
 
             color: #000000;
 
-            background: #00eaff;
+            background: var(--cyan);
 
             border-color: #ffffff;
 
-            transform: translateY(-2px);
+            transform: translateY(-3px);
 
             box-shadow:
 
-                0 0 12px #00eaff,
+                0 0 12px var(--cyan),
 
-                0 0 25px rgba(0,234,255,.5);
+                0 0 30px rgba(0,234,255,0.45);
 
         }
 
 
-        /* =========================
-           MAIN
-        ========================= */
+        /*
+        MAIN
+        */
 
         main {
 
             position: relative;
 
-            z-index: 1;
+            z-index: 2;
 
-            min-height: calc(100vh - 80px);
+            min-height: calc(100vh - 75px);
 
             display: flex;
 
@@ -194,9 +251,9 @@
         }
 
 
-        /* =========================
-           CARD
-        ========================= */
+        /*
+        CARD
+        */
 
         .gda-card {
 
@@ -208,11 +265,11 @@
 
             text-align: center;
 
-            background: rgba(12,20,35,.88);
+            background: var(--panel);
 
-            border: 1px solid rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,0.12);
 
-            border-top: 4px solid #3a82f6;
+            border-top: 4px solid var(--blue);
 
             border-radius: 15px;
 
@@ -220,14 +277,14 @@
 
             box-shadow:
 
-                0 20px 60px rgba(0,0,0,.65);
+                0 20px 60px rgba(0,0,0,0.65);
 
         }
 
 
-        /* =========================
-           TITLE
-        ========================= */
+        /*
+        TITLE
+        */
 
         .title {
 
@@ -241,9 +298,9 @@
 
             text-shadow:
 
-                0 0 8px #00eaff,
+                0 0 8px var(--cyan),
 
-                0 0 25px rgba(0,234,255,.7);
+                0 0 25px rgba(0,234,255,0.7);
 
         }
 
@@ -252,16 +309,16 @@
 
             margin-bottom: 30px;
 
-            color: #aab6ca;
+            color: var(--muted);
 
-            font-size: 1rem;
+            line-height: 1.7;
 
         }
 
 
-        /* =========================
-           GDA IMAGE
-        ========================= */
+        /*
+        ẢNH GDA
+        */
 
         .preview-image {
 
@@ -277,33 +334,35 @@
 
             object-fit: contain;
 
-            border: 2px solid #3a82f6;
+            border: 2px solid var(--blue);
 
             border-radius: 12px;
 
+            background: #000000;
+
             box-shadow:
 
-                0 0 15px rgba(58,130,246,.65),
+                0 0 15px rgba(58,130,246,0.65),
 
-                0 0 40px rgba(0,234,255,.18);
+                0 0 40px rgba(0,234,255,0.18);
 
         }
 
 
-        /* =========================
-           DOWNLOAD
-        ========================= */
+        /*
+        DOWNLOAD
+        */
 
         .download-area {
 
             padding-top: 30px;
 
-            border-top: 1px solid rgba(255,255,255,.15);
+            border-top: 1px solid rgba(255,255,255,0.15);
 
         }
 
 
-        .download-area h2 {
+        .download-title {
 
             margin-bottom: 10px;
 
@@ -312,14 +371,18 @@
         }
 
 
-        .download-area p {
+        .download-description {
 
             margin-bottom: 25px;
 
-            color: #aab6ca;
+            color: var(--muted);
 
         }
 
+
+        /*
+        DOWNLOAD BUTTON
+        */
 
         .download-btn {
 
@@ -331,11 +394,11 @@
 
             gap: 10px;
 
-            padding: 14px 25px;
+            padding: 14px 26px;
 
             color: #ffffff;
 
-            background: rgba(20,31,52,.9);
+            background: rgba(20,31,52,0.95);
 
             border: 2px solid #405273;
 
@@ -345,7 +408,7 @@
 
             text-decoration: none;
 
-            transition: .25s ease;
+            transition: 0.25s ease;
 
         }
 
@@ -354,7 +417,7 @@
 
             color: #000000;
 
-            background: #00eaff;
+            background: var(--cyan);
 
             border-color: #ffffff;
 
@@ -362,19 +425,69 @@
 
             box-shadow:
 
-                0 0 12px #00eaff,
+                0 0 12px var(--cyan),
 
-                0 0 30px rgba(0,234,255,.45);
+                0 0 30px rgba(0,234,255,0.5);
 
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /*
+        BACK HOME
+        */
 
-        @media(max-width:700px) {
+        .back-home {
 
+            display: block;
+
+            width: fit-content;
+
+            margin: 22px auto 0;
+
+            color: var(--muted);
+
+            text-decoration: none;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .back-home:hover {
+
+            color: var(--cyan);
+
+        }
+
+
+        /*
+        FOOTER
+        */
+
+        .footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 20px;
+
+            color: var(--muted);
+
+            text-align: center;
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 0.85rem;
+
+        }
+
+
+        /*
+        MOBILE
+        */
+
+        @media (max-width: 700px) {
 
             .top-bar {
 
@@ -385,7 +498,7 @@
 
             .site-name {
 
-                font-size: .75rem;
+                font-size: 0.72rem;
 
                 letter-spacing: 1px;
 
@@ -394,9 +507,9 @@
 
             .home-btn {
 
-                padding: 7px 10px;
+                padding: 7px 11px;
 
-                font-size: .75rem;
+                font-size: 0.72rem;
 
             }
 
@@ -417,7 +530,7 @@
 
             .title {
 
-                font-size: 1.8rem;
+                font-size: 1.75rem;
 
             }
 
@@ -425,6 +538,13 @@
             .preview-image {
 
                 max-height: 55vh;
+
+            }
+
+
+            .download-btn {
+
+                width: 100%;
 
             }
 
@@ -438,9 +558,7 @@
 <body>
 
 
-    <!-- =========================
-         TOP BAR
-    ========================= -->
+    <!-- TOP BAR -->
 
     <header class="top-bar">
 
@@ -454,8 +572,7 @@
 
         <a
             class="home-btn"
-
-            href="index.html"
+            href="./index.html"
         >
 
             <i class="fas fa-house"></i>
@@ -468,18 +585,13 @@
     </header>
 
 
-
-    <!-- =========================
-         MAIN
-    ========================= -->
+    <!-- MAIN -->
 
     <main>
 
 
-        <div class="gda-card">
+        <section class="gda-card">
 
-
-            <!-- TITLE -->
 
             <h1 class="title">
 
@@ -491,19 +603,16 @@
             <p class="description">
 
                 Geometry Dash Advance Legit Save File
-
                 for playing on GB300.
 
             </p>
 
 
-            <!-- GDA IMAGE -->
+            <!-- ẢNH GDA -->
 
             <img
                 class="preview-image"
-
-                src="GDA.jpg"
-
+                src="./GDA.jpg"
                 alt="Geometry Dash Advance Save File Preview"
             >
 
@@ -513,18 +622,18 @@
             <div class="download-area">
 
 
-                <h2>
+                <h2 class="download-title">
 
                     DOWNLOAD
 
                 </h2>
 
 
-                <p>
+                <p class="download-description">
 
-                    Nhấn nút bên dưới để mở repository
-
-                    và tải Geometry Dash Advance Save File.
+                    Nhấn vào nút bên dưới để truy cập
+                    repository GitHub và tải
+                    Geometry Dash Advance Save File.
 
                 </p>
 
@@ -546,13 +655,40 @@
                 </a>
 
 
+                <a
+                    class="back-home"
+                    href="./index.html"
+                >
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    &nbsp;
+
+                    Quay lại sảnh chính
+
+                </a>
+
+
             </div>
 
 
-        </div>
+        </section>
 
 
     </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        nkgd012-tech (NKGD2K12_VN)
+
+        &nbsp;&bull;&nbsp;
+
+        © 2026
+
+    </footer>
 
 
 </body>
