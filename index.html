@@ -22,7 +22,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -127,7 +127,7 @@
 
 
         /* ==============================
-           TOP RIGHT
+           TOP RIGHT GITHUB BUTTON
         ============================== */
 
         .top-right-profile {
@@ -280,7 +280,7 @@
 
 
         /* ==============================
-           NAME
+           PROFILE NAME
         ============================== */
 
         .profile-name {
@@ -588,7 +588,7 @@
 
 
     <!-- =================================
-         MUSIC
+         BACKGROUND MUSIC
     ================================== -->
 
     <audio
@@ -600,7 +600,7 @@
 
 
     <!-- =================================
-         WELCOME
+         TOP LEFT
     ================================== -->
 
     <div class="top-left-welcome">
@@ -611,7 +611,7 @@
 
 
     <!-- =================================
-         GITHUB
+         TOP RIGHT
     ================================== -->
 
     <div class="top-right-profile">
@@ -623,7 +623,7 @@
             class="follow-btn"
         >
 
-            Follow my account on Github
+            follow my account on github
 
         </a>
 
@@ -631,11 +631,13 @@
 
 
     <!-- =================================
-         MAIN
+         MAIN CONTENT
     ================================== -->
 
     <main class="main-center-panel">
 
+
+        <!-- AVATAR -->
 
         <div class="avatar-circle-frame">
 
@@ -648,6 +650,8 @@
         </div>
 
 
+        <!-- NAME -->
+
         <div class="profile-name">
 
             NKGD2k12_VN
@@ -655,8 +659,12 @@
         </div>
 
 
+        <!-- RELEASE BUTTONS -->
+
         <div class="release-buttons-group">
 
+
+            <!-- FURINA -->
 
             <a
                 href="./furina.html"
@@ -667,6 +675,8 @@
 
             </a>
 
+
+            <!-- GDA -->
 
             <a
                 href="./GDA.html"
@@ -699,7 +709,7 @@
 
 
     <!-- =================================
-         MUSIC BUTTON
+         MUSIC CONTROL
     ================================== -->
 
     <button
@@ -717,10 +727,9 @@
 
         /*
         =========================================
-        MUSIC SYSTEM
+        GET ELEMENTS
         =========================================
         */
-
 
         const music =
             document.getElementById(
@@ -738,7 +747,9 @@
 
 
         /*
-        CẬP NHẬT NÚT
+        =========================================
+        UPDATE MUSIC BUTTON
+        =========================================
         */
 
         function updateMusicButton() {
@@ -767,7 +778,9 @@
 
 
         /*
-        HÀM PHÁT NHẠC
+        =========================================
+        START MUSIC
+        =========================================
         */
 
         function startMusic() {
@@ -779,37 +792,46 @@
             }
 
 
-            music.play()
-                .then(function () {
+            const playPromise =
+                music.play();
 
-                    musicOn = true;
 
-                    updateMusicButton();
+            if (playPromise !== undefined) {
 
-                })
-                .catch(function () {
+                playPromise
+                    .then(function () {
 
-                    /*
-                    Chrome / Edge có thể chặn autoplay.
-                    Sẽ thử lại khi người dùng tương tác.
-                    */
+                        musicOn = true;
 
-                    console.log(
-                        "Autoplay đang bị trình duyệt chặn."
-                    );
+                        updateMusicButton();
 
-                });
+                    })
+
+                    .catch(function () {
+
+                        console.log(
+                            "Trình duyệt đã chặn autoplay. Chờ người dùng tương tác."
+                        );
+
+                    });
+
+            }
 
         }
 
 
         /*
-        NÚT BẬT / TẮT
+        =========================================
+        MUSIC ON / OFF BUTTON
+        =========================================
         */
 
         musicButton.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.stopPropagation();
+
 
                 if (musicOn) {
 
@@ -829,6 +851,7 @@
                             updateMusicButton();
 
                         })
+
                         .catch(function () {
 
                             console.log(
@@ -844,7 +867,9 @@
 
 
         /*
-        TỰ ĐỘNG PHÁT KHI TRANG LOAD
+        =========================================
+        AUTO PLAY WHEN PAGE LOADS
+        =========================================
         */
 
         window.addEventListener(
@@ -862,11 +887,13 @@
 
 
         /*
-        NẾU AUTOPLAY BỊ CHẶN,
-        CLICK / CHẠM ĐẦU TIÊN SẼ PHÁT NHẠC
+        =========================================
+        AUTOPLAY FALLBACK
+        CLICK / TOUCH / KEYBOARD
+        =========================================
         */
 
-        function tryStartAfterInteraction() {
+        function startMusicAfterInteraction() {
 
             if (
                 musicOn &&
@@ -882,28 +909,19 @@
 
         document.addEventListener(
             "click",
-            tryStartAfterInteraction,
-            {
-                once: true
-            }
+            startMusicAfterInteraction
         );
 
 
         document.addEventListener(
             "touchstart",
-            tryStartAfterInteraction,
-            {
-                once: true
-            }
+            startMusicAfterInteraction
         );
 
 
         document.addEventListener(
             "keydown",
-            tryStartAfterInteraction,
-            {
-                once: true
-            }
+            startMusicAfterInteraction
         );
 
 
