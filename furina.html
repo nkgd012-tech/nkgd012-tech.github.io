@@ -10,20 +10,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Furina Theme Collection | NKGD012-TECH</title>
+    <title>Furina Theme Collection</title>
 
-
-    <!-- GOOGLE FONTS -->
 
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
     >
 
     <link
@@ -32,24 +24,7 @@
     >
 
 
-    <!-- FONT AWESOME -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
-
-
     <style>
-
-        :root {
-            --blue: #3a82f6;
-            --cyan: #00eaff;
-            --white: #ffffff;
-            --muted: #aab6ca;
-            --panel: rgba(12, 20, 35, 0.88);
-        }
-
 
         * {
             margin: 0;
@@ -67,281 +42,175 @@
 
             min-height: 100vh;
 
-            overflow-x: hidden;
+            padding:
+                80px 20px 120px;
 
-            color: var(--white);
+            color: #eeeeee;
 
-            font-family: "Changa", sans-serif;
+            font-family:
+                "Changa",
+                sans-serif;
 
             background:
 
                 linear-gradient(
-                    rgba(5, 9, 18, 0.65),
-                    rgba(5, 9, 18, 0.80)
+                    rgba(10,14,23,0.70),
+                    rgba(10,14,23,0.88)
                 ),
 
-                url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+                url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop");
 
-                center center / cover fixed;
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
         }
 
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 0;
-
-            pointer-events: none;
-
-            background:
-
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0, 234, 255, 0.12),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(139, 92, 246, 0.12),
-                    transparent 30%
-                );
-        }
-
-
-        /* =========================
-           TOP BAR
-        ========================== */
 
         .top-bar {
 
-            position: relative;
+            position: fixed;
 
-            z-index: 10;
+            top: 20px;
 
-            display: flex;
+            left: 20px;
 
-            align-items: center;
+            z-index: 100;
 
-            justify-content: space-between;
-
-            padding: 20px 25px;
-
-            background: rgba(5, 10, 20, 0.65);
-
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-            backdrop-filter: blur(10px);
         }
 
 
-        .site-name {
+        .back-btn {
 
-            padding-left: 12px;
+            display: inline-block;
 
-            border-left: 3px solid var(--blue);
-
-            font-family: "Share Tech Mono", monospace;
-
-            font-size: 1rem;
-
-            letter-spacing: 2px;
-        }
-
-
-        /* =========================
-           HOME
-        ========================== */
-
-        .home-btn {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 10px 18px;
+            padding:
+                10px 16px;
 
             color: #ffffff;
 
-            background: rgba(20, 31, 52, 0.9);
+            background:
+                rgba(15,23,42,0.90);
 
-            border: 2px solid #405273;
+            border:
+                2px solid #334155;
 
-            border-radius: 8px;
+            border-radius: 6px;
+
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
             text-decoration: none;
 
-            transition: 0.25s ease;
+            transition: 0.2s;
+
         }
 
 
-        .home-btn:hover {
+        .back-btn:hover {
 
             color: #000000;
 
-            background: var(--cyan);
+            background: #00f2ff;
 
             border-color: #ffffff;
 
-            transform: translateY(-3px);
-
             box-shadow:
-                0 0 12px var(--cyan),
-                0 0 30px rgba(0, 234, 255, 0.45);
+                0 0 20px
+                #00f2ff;
+
         }
 
 
-        /* =========================
-           MAIN
-        ========================== */
-
-        main {
-
-            position: relative;
-
-            z-index: 2;
-
-            min-height: calc(100vh - 75px);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 60px 20px;
-        }
-
-
-        /* =========================
-           CARD
-        ========================== */
-
-        .content-card {
+        .container {
 
             width: 100%;
 
-            max-width: 900px;
+            max-width: 800px;
 
-            padding: 40px;
+            margin: auto;
+
+        }
+
+
+        .panel {
+
+            padding: 35px;
 
             text-align: center;
 
-            background: var(--panel);
+            background:
+                rgba(15,23,42,0.90);
 
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border:
+                2px solid #1e293b;
 
-            border-top: 4px solid var(--blue);
+            border-top:
+                4px solid #3a82f6;
 
-            border-radius: 15px;
-
-            backdrop-filter: blur(12px);
+            border-radius: 8px;
 
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.65);
+                0 20px 50px
+                rgba(0,0,0,0.9);
+
+            backdrop-filter:
+                blur(12px);
+
         }
 
-
-        /* =========================
-           TITLE
-        ========================== */
 
         .title {
 
-            margin-bottom: 10px;
+            margin-bottom: 25px;
 
-            font-size: 2.5rem;
+            color: #ffffff;
+
+            font-size: 2.2rem;
 
             font-weight: 800;
 
-            letter-spacing: 2px;
-
-            text-shadow:
-                0 0 8px var(--cyan),
-                0 0 25px rgba(0, 234, 255, 0.7);
         }
 
-
-        .description {
-
-            margin-bottom: 30px;
-
-            color: var(--muted);
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================
-           IMAGE
-        ========================== */
 
         .preview-image {
-
-            display: block;
 
             width: 100%;
 
             max-width: 700px;
 
-            max-height: 70vh;
+            display: block;
 
-            margin: 0 auto 35px;
+            margin:
+                0 auto 30px;
 
-            object-fit: contain;
+            border:
+                2px solid #334155;
 
-            border: 2px solid var(--blue);
-
-            border-radius: 12px;
-
-            background: #000000;
+            border-radius: 8px;
 
             box-shadow:
-                0 0 15px rgba(58, 130, 246, 0.65),
-                0 0 40px rgba(0, 234, 255, 0.18);
+                0 0 25px
+                rgba(0,242,255,0.25);
+
         }
 
 
-        /* =========================
-           DOWNLOAD
-        ========================== */
-
-        .download-area {
-
-            padding-top: 30px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-
-        .download-title {
-
-            margin-bottom: 10px;
-
-            font-size: 1.6rem;
-        }
-
-
-        .download-description {
+        .description {
 
             margin-bottom: 25px;
 
-            color: var(--muted);
+            color: #cbd5e1;
 
             line-height: 1.7;
+
         }
 
 
-        .button-group {
+        .buttons {
 
             display: flex;
 
@@ -349,265 +218,141 @@
 
             gap: 15px;
 
-            max-width: 500px;
-
-            margin: 0 auto;
         }
 
 
-        /* =========================
-           BUTTON
-        ========================== */
+        .download-btn {
 
-        .action-btn {
+            display: block;
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 10px;
-
-            width: 100%;
-
-            padding: 14px 20px;
+            padding:
+                13px 20px;
 
             color: #ffffff;
 
-            background: rgba(20, 31, 52, 0.95);
+            background:
+                rgba(30,41,59,0.95);
 
-            border: 2px solid #405273;
+            border:
+                2px solid #334155;
+
+            border-radius: 6px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition: 0.2s;
+
+        }
+
+
+        .download-btn:hover {
+
+            color: #000000;
+
+            background: #00f2ff;
+
+            border-color: #ffffff;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 0 20px
+                rgba(0,242,255,0.8);
+
+        }
+
+
+        /* MUSIC BUTTON */
+
+        .music-button {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 99999;
+
+            padding:
+                12px 18px;
+
+            color: #000000;
+
+            background: #00f2ff;
+
+            border:
+                2px solid #ffffff;
 
             border-radius: 8px;
 
-            font-size: 1rem;
+            font-family:
+                "Share Tech Mono",
+                monospace;
 
-            font-weight: 700;
+            font-size: 14px;
 
-            text-decoration: none;
+            font-weight: bold;
 
             cursor: pointer;
 
-            transition: 0.25s ease;
-        }
-
-
-        .action-btn:hover {
-
-            color: #000000;
-
-            background: var(--cyan);
-
-            border-color: #ffffff;
-
-            transform: translateY(-3px);
-
             box-shadow:
-                0 0 12px var(--cyan),
-                0 0 30px rgba(0, 234, 255, 0.5);
+                0 0 15px
+                rgba(0,242,255,0.8);
+
         }
 
 
-        /* =========================
-           FILE LIST
-        ========================== */
-
-        .file-download-area {
-
-            display: none;
-
-            margin-top: 25px;
-
-            padding: 25px;
-
-            background: rgba(0, 0, 0, 0.25);
-
-            border: 1px solid rgba(255, 255, 255, 0.12);
-
-            border-radius: 10px;
-        }
-
-
-        .file-download-area:target {
-
-            display: block;
-        }
-
-
-        .file-title {
-
-            margin-bottom: 20px;
-
-            font-size: 1.3rem;
-        }
-
-
-        .file-list {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-        }
-
-
-        .file-btn {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 10px;
-
-            padding: 13px 16px;
+        .music-button.off {
 
             color: #ffffff;
 
-            background: rgba(30, 41, 59, 0.9);
+            background:
+                rgba(10,14,23,0.95);
 
-            border: 2px solid #334155;
+            border-color:
+                #334155;
 
-            border-radius: 8px;
+            box-shadow: none;
 
-            text-decoration: none;
-
-            transition: 0.25s ease;
         }
 
 
-        .file-btn:hover {
+        @media (max-width:600px) {
 
-            color: #000000;
+            body {
 
-            background: var(--cyan);
+                padding:
+                    80px 15px 100px;
 
-            border-color: #ffffff;
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 0 15px rgba(0, 234, 255, 0.5);
-        }
-
-
-        .file-name {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            text-align: left;
-
-            word-break: break-word;
-        }
-
-
-        .download-icon {
-
-            flex-shrink: 0;
-        }
-
-
-        /* =========================
-           BACK HOME
-        ========================== */
-
-        .back-home {
-
-            display: block;
-
-            width: fit-content;
-
-            margin: 22px auto 0;
-
-            color: var(--muted);
-
-            text-decoration: none;
-
-            transition: 0.2s ease;
-        }
-
-
-        .back-home:hover {
-
-            color: var(--cyan);
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        .footer {
-
-            position: relative;
-
-            z-index: 2;
-
-            padding: 20px;
-
-            color: var(--muted);
-
-            text-align: center;
-
-            font-family: "Share Tech Mono", monospace;
-
-            font-size: 0.85rem;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 700px) {
-
-            .top-bar {
-                padding: 15px;
             }
 
-            .site-name {
-                font-size: 0.72rem;
-                letter-spacing: 1px;
+
+            .panel {
+
+                padding:
+                    25px 18px;
+
             }
 
-            .home-btn {
-                padding: 7px 11px;
-                font-size: 0.72rem;
-            }
-
-            main {
-                padding: 35px 15px;
-            }
-
-            .content-card {
-                padding: 25px 15px;
-            }
 
             .title {
-                font-size: 1.75rem;
+
+                font-size:
+                    1.7rem;
+
             }
 
-            .preview-image {
-                max-height: 55vh;
-            }
 
-            .action-btn {
-                font-size: 0.9rem;
-            }
+            .music-button {
 
-            .file-download-area {
-                padding: 18px 12px;
-            }
+                right: 15px;
 
-            .file-btn {
-                font-size: 0.8rem;
+                bottom: 15px;
+
             }
 
         }
@@ -620,35 +365,38 @@
 <body>
 
 
-    <!-- TOP BAR -->
+    <!-- NHẠC -->
 
-    <header class="top-bar">
+    <audio
+        id="backgroundMusic"
+        src="./menuLoop.mp3"
+        autoplay
+        loop
+        preload="auto"
+    ></audio>
 
-        <div class="site-name">
-            NKGD012-TECH WEB
-        </div>
 
+    <!-- BACK -->
+
+    <div class="top-bar">
 
         <a
-            class="home-btn"
             href="./index.html"
+            class="back-btn"
         >
 
-            <i class="fas fa-house"></i>
-
-            HOME
+            ← BACK TO HOME
 
         </a>
 
-    </header>
+    </div>
 
 
+    <!-- CONTENT -->
 
-    <!-- MAIN -->
+    <main class="container">
 
-    <main>
-
-        <section class="content-card">
+        <section class="panel">
 
 
             <h1 class="title">
@@ -658,168 +406,55 @@
             </h1>
 
 
+            <img
+                src="./muxconfig.png"
+                alt="Furina Theme Collection"
+                class="preview-image"
+            >
+
+
             <p class="description">
 
-                Theme Collection for muOS,
-                compatible with GB300 / SF2000
+                Furina Theme Collection for muOS.
+                Compatible with GB300 and SF2000
                 when using Unifrog firmware.
 
             </p>
 
 
-            <!-- ẢNH FURINA -->
+            <div class="buttons">
 
-            <img
-                class="preview-image"
-                src="./muxconfig.png"
-                alt="Furina Theme Collection Preview"
-            >
-
-
-            <!-- DOWNLOAD -->
-
-            <div class="download-area">
-
-
-                <h2 class="download-title">
-                    DOWNLOAD
-                </h2>
-
-
-                <p class="download-description">
-
-                    Chọn một trong các tùy chọn bên dưới
-                    để truy cập GitHub hoặc tải trực tiếp
-                    các file Furina Theme.
-
-                </p>
-
-
-                <div class="button-group">
-
-
-                    <!-- GITHUB -->
-
-                    <a
-                        class="action-btn"
-
-                        href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
-
-                        target="_blank"
-
-                        rel="noopener noreferrer"
-                    >
-
-                        <i class="fab fa-github"></i>
-
-                        OPEN GITHUB PAGE
-
-                    </a>
-
-
-                    <!-- DOWNLOAD FILES -->
-
-                    <a
-                        class="action-btn"
-
-                        href="#download-files"
-                    >
-
-                        <i class="fas fa-download"></i>
-
-                        DOWNLOAD FILES
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- FILES -->
-
-                <div
-                    id="download-files"
-                    class="file-download-area"
-                >
-
-
-                    <h3 class="file-title">
-
-                        SELECT A FILE TO DOWNLOAD
-
-                    </h3>
-
-
-                    <div class="file-list">
-
-
-                        <!-- FILE 1 -->
-
-                        <a
-                            class="file-btn"
-
-                            href="./GenshiImpactVH.zip"
-
-                            download="GenshiImpactVH.zip"
-                        >
-
-                            <span class="file-name">
-
-                                <i class="fas fa-file-zipper"></i>
-
-                                GenshiImpactVH.zip
-
-                            </span>
-
-
-                            <i class="fas fa-download download-icon"></i>
-
-                        </a>
-
-
-
-                        <!-- FILE 2 -->
-
-                        <a
-                            class="file-btn"
-
-                            href="./furina.theme.collection.zip"
-
-                            download="furina.theme.collection.zip"
-                        >
-
-                            <span class="file-name">
-
-                                <i class="fas fa-file-zipper"></i>
-
-                                furina.theme.collection.zip
-
-                            </span>
-
-
-                            <i class="fas fa-download download-icon"></i>
-
-                        </a>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- BACK -->
 
                 <a
-                    class="back-home"
-                    href="./index.html"
+                    href="https://github.com/nkgd012-tech/furina-theme-collection-for-muOS-Compatible-with-the-GB300-SF2000-if-using-Unifrog-firmware."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="download-btn"
                 >
 
-                    <i class="fas fa-arrow-left"></i>
+                    🔗 VIEW FURINA PROJECT ON GITHUB
 
-                    &nbsp;
+                </a>
 
-                    Quay lại sảnh chính
+
+                <a
+                    href="./GenshiImpactVH.zip"
+                    download
+                    class="download-btn"
+                >
+
+                    📦 DOWNLOAD GenshiImpactVH.zip
+
+                </a>
+
+
+                <a
+                    href="./furina.theme.collection.zip"
+                    download
+                    class="download-btn"
+                >
+
+                    📦 DOWNLOAD furina.theme.collection.zip
 
                 </a>
 
@@ -832,16 +467,114 @@
     </main>
 
 
+    <!-- MUSIC BUTTON -->
 
-    <footer class="footer">
+    <button
+        id="musicButton"
+        class="music-button"
+        type="button"
+    >
 
-        nkgd012-tech (NKGD2K12_VN)
+        🔊 MUSIC ON
 
-        &nbsp;&bull;&nbsp;
+    </button>
 
-        © 2026
 
-    </footer>
+    <script>
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+        const musicButton =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        let musicOn = true;
+
+
+        function updateMusicButton() {
+
+            if (musicOn) {
+
+                musicButton.textContent =
+                    "🔊 MUSIC ON";
+
+                musicButton.classList.remove(
+                    "off"
+                );
+
+            } else {
+
+                musicButton.textContent =
+                    "🔇 MUSIC OFF";
+
+                musicButton.classList.add(
+                    "off"
+                );
+
+            }
+
+        }
+
+
+        musicButton.addEventListener(
+            "click",
+            function () {
+
+                if (musicOn) {
+
+                    music.pause();
+
+                    musicOn = false;
+
+                } else {
+
+                    music.play()
+                        .then(function () {
+
+                            musicOn = true;
+
+                            updateMusicButton();
+
+                        });
+
+                    return;
+
+                }
+
+
+                updateMusicButton();
+
+            }
+        );
+
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                musicOn = true;
+
+                updateMusicButton();
+
+
+                music.play()
+                    .catch(function () {
+
+                        console.log(
+                            "Autoplay bị chặn. Bấm MUSIC ON để phát nhạc."
+                        );
+
+                    });
+
+            }
+        );
+
+    </script>
 
 
 </body>
