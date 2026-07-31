@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Geometry Dash Advance | NKGD012-TECH</title>
 
 
     <!-- GOOGLE FONTS -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap"
@@ -32,35 +43,23 @@
     <style>
 
         :root {
-
             --blue: #3a82f6;
-
             --cyan: #00eaff;
-
             --white: #ffffff;
-
             --muted: #aab6ca;
-
-            --panel: rgba(12,20,35,0.88);
-
+            --panel: rgba(12, 20, 35, 0.88);
         }
 
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
 
 
         html {
-
             scroll-behavior: smooth;
-
         }
 
 
@@ -74,30 +73,18 @@
 
             font-family: "Changa", sans-serif;
 
-            /*
-            ẢNH NỀN GIỐNG SẢNH CHÍNH
-            */
-
             background:
 
                 linear-gradient(
-
-                    rgba(5,9,18,0.65),
-
-                    rgba(5,9,18,0.80)
-
+                    rgba(5, 9, 18, 0.65),
+                    rgba(5, 9, 18, 0.80)
                 ),
 
                 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
 
                 center center / cover fixed;
-
         }
 
-
-        /*
-        HIỆU ỨNG NỀN
-        */
 
         body::before {
 
@@ -114,31 +101,20 @@
             background:
 
                 radial-gradient(
-
                     circle at 20% 20%,
-
-                    rgba(0,234,255,0.12),
-
+                    rgba(0, 234, 255, 0.12),
                     transparent 30%
-
                 ),
 
                 radial-gradient(
-
                     circle at 80% 80%,
-
-                    rgba(139,92,246,0.12),
-
+                    rgba(139, 92, 246, 0.12),
                     transparent 30%
-
                 );
-
         }
 
 
-        /*
-        TOP BAR
-        */
+        /* TOP BAR */
 
         .top-bar {
 
@@ -154,12 +130,11 @@
 
             padding: 20px 25px;
 
-            background: rgba(5,10,20,0.65);
+            background: rgba(5, 10, 20, 0.65);
 
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
             backdrop-filter: blur(10px);
-
         }
 
 
@@ -174,13 +149,10 @@
             font-size: 1rem;
 
             letter-spacing: 2px;
-
         }
 
 
-        /*
-        HOME
-        */
+        /* HOME */
 
         .home-btn {
 
@@ -196,7 +168,7 @@
 
             color: #ffffff;
 
-            background: rgba(20,31,52,0.9);
+            background: rgba(20, 31, 52, 0.9);
 
             border: 2px solid #405273;
 
@@ -205,7 +177,6 @@
             text-decoration: none;
 
             transition: 0.25s ease;
-
         }
 
 
@@ -220,17 +191,12 @@
             transform: translateY(-3px);
 
             box-shadow:
-
                 0 0 12px var(--cyan),
-
-                0 0 30px rgba(0,234,255,0.45);
-
+                0 0 30px rgba(0, 234, 255, 0.45);
         }
 
 
-        /*
-        MAIN
-        */
+        /* MAIN */
 
         main {
 
@@ -247,15 +213,12 @@
             justify-content: center;
 
             padding: 60px 20px;
-
         }
 
 
-        /*
-        CARD
-        */
+        /* CARD */
 
-        .gda-card {
+        .content-card {
 
             width: 100%;
 
@@ -267,7 +230,7 @@
 
             background: var(--panel);
 
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255, 255, 255, 0.12);
 
             border-top: 4px solid var(--blue);
 
@@ -276,15 +239,11 @@
             backdrop-filter: blur(12px);
 
             box-shadow:
-
-                0 20px 60px rgba(0,0,0,0.65);
-
+                0 20px 60px rgba(0, 0, 0, 0.65);
         }
 
 
-        /*
-        TITLE
-        */
+        /* TITLE */
 
         .title {
 
@@ -297,11 +256,8 @@
             letter-spacing: 2px;
 
             text-shadow:
-
                 0 0 8px var(--cyan),
-
-                0 0 25px rgba(0,234,255,0.7);
-
+                0 0 25px rgba(0, 234, 255, 0.7);
         }
 
 
@@ -312,13 +268,10 @@
             color: var(--muted);
 
             line-height: 1.7;
-
         }
 
 
-        /*
-        ẢNH GDA
-        */
+        /* IMAGE */
 
         .preview-image {
 
@@ -341,24 +294,18 @@
             background: #000000;
 
             box-shadow:
-
-                0 0 15px rgba(58,130,246,0.65),
-
-                0 0 40px rgba(0,234,255,0.18);
-
+                0 0 15px rgba(58, 130, 246, 0.65),
+                0 0 40px rgba(0, 234, 255, 0.18);
         }
 
 
-        /*
-        DOWNLOAD
-        */
+        /* DOWNLOAD */
 
         .download-area {
 
             padding-top: 30px;
 
-            border-top: 1px solid rgba(255,255,255,0.15);
-
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
 
@@ -367,7 +314,6 @@
             margin-bottom: 10px;
 
             font-size: 1.6rem;
-
         }
 
 
@@ -377,16 +323,29 @@
 
             color: var(--muted);
 
+            line-height: 1.7;
         }
 
 
-        /*
-        DOWNLOAD BUTTON
-        */
+        .button-group {
 
-        .download-btn {
+            display: flex;
 
-            display: inline-flex;
+            flex-direction: column;
+
+            gap: 15px;
+
+            max-width: 500px;
+
+            margin: 0 auto;
+        }
+
+
+        /* BUTTON */
+
+        .action-btn {
+
+            display: flex;
 
             align-items: center;
 
@@ -394,26 +353,31 @@
 
             gap: 10px;
 
-            padding: 14px 26px;
+            width: 100%;
+
+            padding: 14px 20px;
 
             color: #ffffff;
 
-            background: rgba(20,31,52,0.95);
+            background: rgba(20, 31, 52, 0.95);
 
             border: 2px solid #405273;
 
             border-radius: 8px;
 
+            font-size: 1rem;
+
             font-weight: 700;
 
             text-decoration: none;
 
-            transition: 0.25s ease;
+            cursor: pointer;
 
+            transition: 0.25s ease;
         }
 
 
-        .download-btn:hover {
+        .action-btn:hover {
 
             color: #000000;
 
@@ -424,17 +388,115 @@
             transform: translateY(-3px);
 
             box-shadow:
-
                 0 0 12px var(--cyan),
-
-                0 0 30px rgba(0,234,255,0.5);
-
+                0 0 30px rgba(0, 234, 255, 0.5);
         }
 
 
-        /*
-        BACK HOME
-        */
+        /* FILE LIST */
+
+        .file-download-area {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            border-radius: 10px;
+        }
+
+
+        .file-download-area:target {
+
+            display: block;
+        }
+
+
+        .file-title {
+
+            margin-bottom: 20px;
+
+            font-size: 1.3rem;
+        }
+
+
+        .file-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .file-btn {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            padding: 13px 16px;
+
+            color: #ffffff;
+
+            background: rgba(30, 41, 59, 0.9);
+
+            border: 2px solid #334155;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: 0.25s ease;
+        }
+
+
+        .file-btn:hover {
+
+            color: #000000;
+
+            background: var(--cyan);
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 15px rgba(0, 234, 255, 0.5);
+        }
+
+
+        .file-name {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-align: left;
+
+            word-break: break-word;
+        }
+
+
+        .download-icon {
+
+            flex-shrink: 0;
+        }
+
+
+        /* BACK HOME */
 
         .back-home {
 
@@ -449,20 +511,16 @@
             text-decoration: none;
 
             transition: 0.2s ease;
-
         }
 
 
         .back-home:hover {
 
             color: var(--cyan);
-
         }
 
 
-        /*
-        FOOTER
-        */
+        /* FOOTER */
 
         .footer {
 
@@ -479,73 +537,53 @@
             font-family: "Share Tech Mono", monospace;
 
             font-size: 0.85rem;
-
         }
 
 
-        /*
-        MOBILE
-        */
+        /* MOBILE */
 
         @media (max-width: 700px) {
 
             .top-bar {
-
                 padding: 15px;
-
             }
-
 
             .site-name {
-
                 font-size: 0.72rem;
-
                 letter-spacing: 1px;
-
             }
-
 
             .home-btn {
-
                 padding: 7px 11px;
-
                 font-size: 0.72rem;
-
             }
-
 
             main {
-
                 padding: 35px 15px;
-
             }
 
-
-            .gda-card {
-
+            .content-card {
                 padding: 25px 15px;
-
             }
-
 
             .title {
-
                 font-size: 1.75rem;
-
             }
-
 
             .preview-image {
-
                 max-height: 55vh;
-
             }
 
+            .action-btn {
+                font-size: 0.9rem;
+            }
 
-            .download-btn {
+            .file-download-area {
+                padding: 18px 12px;
+            }
 
-                width: 100%;
-
+            .file-btn {
+                font-size: 0.8rem;
             }
 
         }
@@ -562,11 +600,8 @@
 
     <header class="top-bar">
 
-
         <div class="site-name">
-
             NKGD012-TECH WEB
-
         </div>
 
 
@@ -581,16 +616,15 @@
 
         </a>
 
-
     </header>
+
 
 
     <!-- MAIN -->
 
     <main>
 
-
-        <section class="gda-card">
+        <section class="content-card">
 
 
             <h1 class="title">
@@ -623,37 +657,109 @@
 
 
                 <h2 class="download-title">
-
                     DOWNLOAD
-
                 </h2>
 
 
                 <p class="download-description">
 
-                    Nhấn vào nút bên dưới để truy cập
-                    repository GitHub và tải
-                    Geometry Dash Advance Save File.
+                    Chọn một trong các tùy chọn bên dưới
+                    để truy cập GitHub hoặc tải trực tiếp
+                    file Geometry Dash Advance Save File.
 
                 </p>
 
 
-                <a
-                    class="download-btn"
+                <div class="button-group">
 
-                    href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300"
 
-                    target="_blank"
+                    <!-- GITHUB -->
 
-                    rel="noopener noreferrer"
+                    <a
+                        class="action-btn"
+
+                        href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+                    >
+
+                        <i class="fab fa-github"></i>
+
+                        OPEN GITHUB PAGE
+
+                    </a>
+
+
+                    <!-- DOWNLOAD FILES -->
+
+                    <a
+                        class="action-btn"
+
+                        href="#download-files"
+                    >
+
+                        <i class="fas fa-download"></i>
+
+                        DOWNLOAD FILES
+
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- FILE DOWNLOAD -->
+
+                <div
+                    id="download-files"
+                    class="file-download-area"
                 >
 
-                    <i class="fab fa-github"></i>
 
-                    DOWNLOAD GDA SAVE FILE
+                    <h3 class="file-title">
 
-                </a>
+                        SELECT A FILE TO DOWNLOAD
 
+                    </h3>
+
+
+                    <div class="file-list">
+
+
+                        <!-- GDA ZIP -->
+
+                        <a
+                            class="file-btn"
+
+                            href="./GDA.save.file.zip"
+
+                            download="GDA.save.file.zip"
+                        >
+
+                            <span class="file-name">
+
+                                <i class="fas fa-file-zipper"></i>
+
+                                GDA.save.file.zip
+
+                            </span>
+
+
+                            <i class="fas fa-download download-icon"></i>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BACK HOME -->
 
                 <a
                     class="back-home"
@@ -674,11 +780,9 @@
 
         </section>
 
-
     </main>
 
 
-    <!-- FOOTER -->
 
     <footer class="footer">
 
