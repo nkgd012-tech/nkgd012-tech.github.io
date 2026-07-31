@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Geometry Dash Advance</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            color: #ffffff;
+
+            font-family: "Changa", sans-serif;
+
+            background:
+
+                linear-gradient(
+
+                    rgba(5, 9, 18, 0.65),
+
+                    rgba(5, 9, 18, 0.80)
+
+                ),
+
+                url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop")
+
+                center center / cover fixed;
+
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 20px 25px;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
+
+            background: rgba(5,10,20,.65);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        .site-name {
+
+            padding-left: 12px;
+
+            border-left: 3px solid #3a82f6;
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 1rem;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =========================
+           HOME BUTTON
+        ========================= */
+
+        .home-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 9px 16px;
+
+            color: #ffffff;
+
+            background: rgba(20,31,52,.9);
+
+            border: 2px solid #405273;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: .25s ease;
+
+        }
+
+
+        .home-btn:hover {
+
+            color: #000000;
+
+            background: #00eaff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                0 0 12px #00eaff,
+
+                0 0 25px rgba(0,234,255,.5);
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            position: relative;
+
+            z-index: 1;
+
+            min-height: calc(100vh - 80px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 60px 20px;
+
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .gda-card {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background: rgba(12,20,35,.88);
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            border-top: 4px solid #3a82f6;
+
+            border-radius: 15px;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+
+                0 20px 60px rgba(0,0,0,.65);
+
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title {
+
+            margin-bottom: 10px;
+
+            font-size: 2.5rem;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+
+                0 0 8px #00eaff,
+
+                0 0 25px rgba(0,234,255,.7);
+
+        }
+
+
+        .description {
+
+            margin-bottom: 30px;
+
+            color: #aab6ca;
+
+            font-size: 1rem;
+
+        }
+
+
+        /* =========================
+           GDA IMAGE
+        ========================= */
+
+        .preview-image {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 700px;
+
+            max-height: 70vh;
+
+            margin: 0 auto 35px;
+
+            object-fit: contain;
+
+            border: 2px solid #3a82f6;
+
+            border-radius: 12px;
+
+            box-shadow:
+
+                0 0 15px rgba(58,130,246,.65),
+
+                0 0 40px rgba(0,234,255,.18);
+
+        }
+
+
+        /* =========================
+           DOWNLOAD
+        ========================= */
+
+        .download-area {
+
+            padding-top: 30px;
+
+            border-top: 1px solid rgba(255,255,255,.15);
+
+        }
+
+
+        .download-area h2 {
+
+            margin-bottom: 10px;
+
+            font-size: 1.6rem;
+
+        }
+
+
+        .download-area p {
+
+            margin-bottom: 25px;
+
+            color: #aab6ca;
+
+        }
+
+
+        .download-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 25px;
+
+            color: #ffffff;
+
+            background: rgba(20,31,52,.9);
+
+            border: 2px solid #405273;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .25s ease;
+
+        }
+
+
+        .download-btn:hover {
+
+            color: #000000;
+
+            background: #00eaff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 0 12px #00eaff,
+
+                0 0 30px rgba(0,234,255,.45);
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:700px) {
+
+
+            .top-bar {
+
+                padding: 15px;
+
+            }
+
+
+            .site-name {
+
+                font-size: .75rem;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .home-btn {
+
+                padding: 7px 10px;
+
+                font-size: .75rem;
+
+            }
+
+
+            main {
+
+                padding: 35px 15px;
+
+            }
+
+
+            .gda-card {
+
+                padding: 25px 15px;
+
+            }
+
+
+            .title {
+
+                font-size: 1.8rem;
+
+            }
+
+
+            .preview-image {
+
+                max-height: 55vh;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================= -->
+
+    <header class="top-bar">
+
+
+        <div class="site-name">
+
+            NKGD012-TECH WEB
+
+        </div>
+
+
+        <a
+            class="home-btn"
+
+            href="index.html"
+        >
+
+            <i class="fas fa-house"></i>
+
+            HOME
+
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+
+        <div class="gda-card">
+
+
+            <!-- TITLE -->
+
+            <h1 class="title">
+
+                GEOMETRY DASH ADVANCE
+
+            </h1>
+
+
+            <p class="description">
+
+                Geometry Dash Advance Legit Save File
+
+                for playing on GB300.
+
+            </p>
+
+
+            <!-- GDA IMAGE -->
+
+            <img
+                class="preview-image"
+
+                src="GDA.jpg"
+
+                alt="Geometry Dash Advance Save File Preview"
+            >
+
+
+            <!-- DOWNLOAD -->
+
+            <div class="download-area">
+
+
+                <h2>
+
+                    DOWNLOAD
+
+                </h2>
+
+
+                <p>
+
+                    Nhấn nút bên dưới để mở repository
+
+                    và tải Geometry Dash Advance Save File.
+
+                </p>
+
+
+                <a
+                    class="download-btn"
+
+                    href="https://github.com/nkgd012-tech/Geometry-dash-advance-legit-save-file-play-on-gb300"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+                >
+
+                    <i class="fab fa-github"></i>
+
+                    DOWNLOAD GDA SAVE FILE
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>
