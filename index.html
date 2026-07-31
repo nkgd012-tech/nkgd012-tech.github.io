@@ -399,6 +399,41 @@
 
 
         /* ==============================
+           MUSIC CREDIT
+        ============================== */
+
+        .music-credit {
+
+            position: fixed;
+
+            right: 175px;
+
+            bottom: 26px;
+
+            z-index: 999999;
+
+            color: #ffffff;
+
+            font-family:
+                "Share Tech Mono",
+                monospace;
+
+            font-size: 13px;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 0 8px
+                rgba(0,242,255,0.5);
+
+            user-select: none;
+
+            pointer-events: none;
+
+        }
+
+
+        /* ==============================
            MUSIC BUTTON
         ============================== */
 
@@ -569,11 +604,31 @@
             }
 
 
+            /* MUSIC CREDIT MOBILE */
+
+            .music-credit {
+
+                right: 150px;
+
+                bottom: 26px;
+
+                font-size:
+                    10px;
+
+            }
+
+
             .music-button {
 
                 right: 15px;
 
                 bottom: 15px;
+
+                padding:
+                    10px 13px;
+
+                font-size:
+                    11px;
 
             }
 
@@ -611,7 +666,7 @@
 
 
     <!-- =================================
-         TOP RIGHT
+         TOP RIGHT GITHUB
     ================================== -->
 
     <div class="top-right-profile">
@@ -650,7 +705,7 @@
         </div>
 
 
-        <!-- NAME -->
+        <!-- PROFILE NAME -->
 
         <div class="profile-name">
 
@@ -704,6 +759,17 @@
         (nkgd2k12_vn)
         &nbsp;&bull;&nbsp;
         ©2026
+
+    </div>
+
+
+    <!-- =================================
+         MUSIC CREDIT
+    ================================== -->
+
+    <div class="music-credit">
+
+        Song made by RobTop Games
 
     </div>
 
@@ -796,7 +862,9 @@
                 music.play();
 
 
-            if (playPromise !== undefined) {
+            if (
+                playPromise !== undefined
+            ) {
 
                 playPromise
                     .then(function () {
@@ -810,7 +878,7 @@
                     .catch(function () {
 
                         console.log(
-                            "Trình duyệt đã chặn autoplay. Chờ người dùng tương tác."
+                            "Autoplay bị trình duyệt chặn. Đang chờ người dùng tương tác."
                         );
 
                     });
@@ -822,7 +890,7 @@
 
         /*
         =========================================
-        MUSIC ON / OFF BUTTON
+        MUSIC ON / OFF
         =========================================
         */
 
@@ -868,7 +936,7 @@
 
         /*
         =========================================
-        AUTO PLAY WHEN PAGE LOADS
+        AUTO PLAY
         =========================================
         */
 
@@ -889,7 +957,6 @@
         /*
         =========================================
         AUTOPLAY FALLBACK
-        CLICK / TOUCH / KEYBOARD
         =========================================
         */
 
