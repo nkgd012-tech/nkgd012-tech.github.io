@@ -72,7 +72,7 @@
 
                 linear-gradient(
                     rgba(10, 14, 23, 0.65),
-                    rgba(10, 14, 23, 0.82)
+                    rgba(10, 14, 23, 0.85)
                 ),
 
                 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&auto=format&fit=crop");
@@ -88,7 +88,9 @@
         }
 
 
-        /* TOP LEFT */
+        /* ==============================
+           TOP LEFT
+        ============================== */
 
         .top-left-welcome {
 
@@ -102,7 +104,8 @@
 
             padding-left: 10px;
 
-            border-left: 3px solid #3a82f6;
+            border-left:
+                3px solid #3a82f6;
 
             color: #ffffff;
 
@@ -117,12 +120,15 @@
             text-transform: uppercase;
 
             text-shadow:
-                2px 2px 4px rgba(0,0,0,0.8);
+                2px 2px 4px
+                rgba(0,0,0,0.8);
 
         }
 
 
-        /* TOP RIGHT */
+        /* ==============================
+           TOP RIGHT
+        ============================== */
 
         .top-right-profile {
 
@@ -145,14 +151,13 @@
 
             justify-content: center;
 
-            gap: 8px;
-
-            padding: 9px 16px;
+            padding:
+                9px 16px;
 
             color: #ffffff;
 
             background:
-                rgba(15, 23, 42, 0.85);
+                rgba(15,23,42,0.85);
 
             border:
                 2px solid #334155;
@@ -165,11 +170,9 @@
 
             font-size: 0.9rem;
 
-            text-transform: uppercase;
-
             text-decoration: none;
 
-            backdrop-filter: blur(8px);
+            text-transform: uppercase;
 
             transition: 0.2s;
 
@@ -184,7 +187,8 @@
 
             border-color: #ffffff;
 
-            transform: scale(1.05);
+            transform:
+                scale(1.05);
 
             box-shadow:
                 0 0 15px
@@ -193,7 +197,9 @@
         }
 
 
-        /* MAIN PANEL */
+        /* ==============================
+           MAIN PANEL
+        ============================== */
 
         .main-center-panel {
 
@@ -205,12 +211,13 @@
 
             max-width: 550px;
 
-            padding: 40px 50px;
+            padding:
+                40px 50px;
 
             text-align: center;
 
             background:
-                rgba(15, 23, 42, 0.88);
+                rgba(15,23,42,0.88);
 
             border:
                 2px solid #1e293b;
@@ -220,7 +227,8 @@
 
             border-radius: 8px;
 
-            backdrop-filter: blur(12px);
+            backdrop-filter:
+                blur(12px);
 
             box-shadow:
                 0 20px 50px
@@ -229,7 +237,9 @@
         }
 
 
-        /* AVATAR */
+        /* ==============================
+           AVATAR
+        ============================== */
 
         .avatar-circle-frame {
 
@@ -269,7 +279,9 @@
         }
 
 
-        /* NAME */
+        /* ==============================
+           NAME
+        ============================== */
 
         .profile-name {
 
@@ -290,7 +302,9 @@
         }
 
 
-        /* BUTTON GROUP */
+        /* ==============================
+           BUTTONS
+        ============================== */
 
         .release-buttons-group {
 
@@ -303,8 +317,6 @@
         }
 
 
-        /* RELEASE BUTTON */
-
         .release-btn {
 
             display: flex;
@@ -315,7 +327,8 @@
 
             width: 100%;
 
-            padding: 13px 20px;
+            padding:
+                13px 20px;
 
             color: #ffffff;
 
@@ -358,7 +371,9 @@
         }
 
 
-        /* FOOTER */
+        /* ==============================
+           FOOTER
+        ============================== */
 
         .bottom-left-footer {
 
@@ -383,7 +398,9 @@
         }
 
 
-        /* MUSIC BUTTON */
+        /* ==============================
+           MUSIC BUTTON
+        ============================== */
 
         .music-button {
 
@@ -393,9 +410,12 @@
 
             bottom: 20px;
 
-            z-index: 99999;
+            z-index: 999999;
 
-            padding: 12px 18px;
+            display: block;
+
+            padding:
+                12px 18px;
 
             color: #000000;
 
@@ -452,7 +472,9 @@
         }
 
 
-        /* MOBILE */
+        /* ==============================
+           MOBILE
+        ============================== */
 
         @media (max-width: 600px) {
 
@@ -461,9 +483,11 @@
                 justify-content:
                     flex-start;
 
-                padding-top: 100px;
+                padding-top:
+                    100px;
 
-                padding-bottom: 100px;
+                padding-bottom:
+                    100px;
 
             }
 
@@ -474,7 +498,8 @@
 
                 left: 15px;
 
-                font-size: 0.75rem;
+                font-size:
+                    0.75rem;
 
             }
 
@@ -562,18 +587,21 @@
 <body>
 
 
-    <!-- NHẠC NỀN -->
+    <!-- =================================
+         MUSIC
+    ================================== -->
 
     <audio
         id="backgroundMusic"
         src="./menuLoop.mp3"
-        autoplay
         loop
         preload="auto"
     ></audio>
 
 
-    <!-- WELCOME -->
+    <!-- =================================
+         WELCOME
+    ================================== -->
 
     <div class="top-left-welcome">
 
@@ -582,7 +610,9 @@
     </div>
 
 
-    <!-- GITHUB -->
+    <!-- =================================
+         GITHUB
+    ================================== -->
 
     <div class="top-right-profile">
 
@@ -600,12 +630,12 @@
     </div>
 
 
-    <!-- MAIN -->
+    <!-- =================================
+         MAIN
+    ================================== -->
 
     <main class="main-center-panel">
 
-
-        <!-- AVATAR -->
 
         <div class="avatar-circle-frame">
 
@@ -618,16 +648,12 @@
         </div>
 
 
-        <!-- NAME -->
-
         <div class="profile-name">
 
             NKGD2k12_VN
 
         </div>
 
-
-        <!-- BUTTONS -->
 
         <div class="release-buttons-group">
 
@@ -654,21 +680,27 @@
 
         </div>
 
+
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =================================
+         FOOTER
+    ================================== -->
 
     <div class="bottom-left-footer">
 
-        nkgd012-tech (nkgd2k12_vn)
+        nkgd012-tech
+        (nkgd2k12_vn)
         &nbsp;&bull;&nbsp;
         ©2026
 
     </div>
 
 
-    <!-- MUSIC BUTTON -->
+    <!-- =================================
+         MUSIC BUTTON
+    ================================== -->
 
     <button
         id="musicButton"
@@ -683,10 +715,18 @@
 
     <script>
 
+        /*
+        =========================================
+        MUSIC SYSTEM
+        =========================================
+        */
+
+
         const music =
             document.getElementById(
                 "backgroundMusic"
             );
+
 
         const musicButton =
             document.getElementById(
@@ -696,6 +736,10 @@
 
         let musicOn = true;
 
+
+        /*
+        CẬP NHẬT NÚT
+        */
 
         function updateMusicButton() {
 
@@ -722,6 +766,47 @@
         }
 
 
+        /*
+        HÀM PHÁT NHẠC
+        */
+
+        function startMusic() {
+
+            if (!musicOn) {
+
+                return;
+
+            }
+
+
+            music.play()
+                .then(function () {
+
+                    musicOn = true;
+
+                    updateMusicButton();
+
+                })
+                .catch(function () {
+
+                    /*
+                    Chrome / Edge có thể chặn autoplay.
+                    Sẽ thử lại khi người dùng tương tác.
+                    */
+
+                    console.log(
+                        "Autoplay đang bị trình duyệt chặn."
+                    );
+
+                });
+
+        }
+
+
+        /*
+        NÚT BẬT / TẮT
+        */
+
         musicButton.addEventListener(
             "click",
             function () {
@@ -731,6 +816,8 @@
                     music.pause();
 
                     musicOn = false;
+
+                    updateMusicButton();
 
                 } else {
 
@@ -750,16 +837,15 @@
 
                         });
 
-                    return;
-
                 }
-
-
-                updateMusicButton();
 
             }
         );
 
+
+        /*
+        TỰ ĐỘNG PHÁT KHI TRANG LOAD
+        */
 
         window.addEventListener(
             "load",
@@ -769,18 +855,57 @@
 
                 updateMusicButton();
 
-
-                music.play()
-                    .catch(function () {
-
-                        console.log(
-                            "Autoplay bị trình duyệt chặn. Hãy bấm MUSIC ON."
-                        );
-
-                    });
+                startMusic();
 
             }
         );
+
+
+        /*
+        NẾU AUTOPLAY BỊ CHẶN,
+        CLICK / CHẠM ĐẦU TIÊN SẼ PHÁT NHẠC
+        */
+
+        function tryStartAfterInteraction() {
+
+            if (
+                musicOn &&
+                music.paused
+            ) {
+
+                startMusic();
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "touchstart",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            tryStartAfterInteraction,
+            {
+                once: true
+            }
+        );
+
 
     </script>
 
